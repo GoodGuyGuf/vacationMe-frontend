@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Post from './Post';
-import {fetchPosts} from './FetchPosts'
+import {fetchPosts} from '../../actions/FetchPosts';
 import NavBar from './NavBar';
 
 class Home extends React.Component{
