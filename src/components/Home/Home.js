@@ -1,10 +1,30 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-export default class Home extends React.Component{
+class Home extends React.Component{
 
     logout = event => {
         localStorage.removeItem("loggedIn")
+    }
+
+    componentDidMount(){
+        fetch("http://localhost:3000/posts")
+        .then(response => response.json())
+        .then(json => {
+            json.data.forEach(element => {
+                this.props.dispatch({
+                    type: "ADD_POST", 
+                    post: {
+                        id: element.id,
+                        location: element.attributes.location,
+                        title: element.attributes.title,
+                        caption: element.attributes.caption, 
+                        userId: element.attributes.user_id
+                    }
+                })
+            })
+        });
     }
 
     render(){
@@ -18,3 +38,5 @@ export default class Home extends React.Component{
         )
     }
 }
+
+export default connect(state => ({posts: state.posts}))(Home)
