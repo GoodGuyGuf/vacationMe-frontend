@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Post from './Post';
+import {fetchPosts} from './FetchPosts'
 
 class Home extends React.Component{
 
@@ -9,22 +11,7 @@ class Home extends React.Component{
     }
 
     componentDidMount(){
-        fetch("http://localhost:3000/posts")
-        .then(response => response.json())
-        .then(json => {
-            json.data.forEach(element => {
-                this.props.dispatch({
-                    type: "ADD_POST", 
-                    post: {
-                        id: element.id,
-                        location: element.attributes.location,
-                        title: element.attributes.title,
-                        caption: element.attributes.caption, 
-                        userId: element.attributes.user_id
-                    }
-                })
-            })
-        });
+        this.props.fetchPosts()
     }
 
     render(){
@@ -34,9 +21,16 @@ class Home extends React.Component{
                 <h1><Link to="/profile">Profile</Link></h1>
                 <h3><Link to="/" onClick={this.logout}>Logout</Link></h3>
                 {/* <h1><Link to="/destinations">Destinations</Link></h1> */}
+                <Post/>
             </div>
         )
     }
 }
 
-export default connect(state => ({posts: state.posts}))(Home)
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchPosts: () => dispatch(fetchPosts())
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Home)
