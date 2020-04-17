@@ -7,11 +7,11 @@ import thunk from 'redux-thunk';
 import App from './App';
 import Home from './components/Home/Home.js';
 import Profile from './components/Profile/Profile.js';
-import PostReducer from './reducers/PostReducer.js';
+import rootReducer from './reducers/CombineReducer.js';
 import './css/index.css';
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(PostReducer, applyMiddleware(thunk))
+const store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>
