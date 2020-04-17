@@ -16,11 +16,15 @@ const store = createStore(PostReducer, applyMiddleware(thunk))
 ReactDOM.render(
   <Provider store={store}>
     <Router>
+
       <Route exact path="/" component={App}/>
-      {localStorage.getItem('loggedIn') !== null ? <Redirect to="/home" /> : null}
+        {localStorage.getItem('loggedIn') !== null ? <Redirect to="/home" /> : null}
+
       <Route exact path="/home" component={Home}/>
-      {localStorage.getItem('loggedIn') === null ? <Redirect to="/" /> : null}
+        {localStorage.getItem('loggedIn') === null ? <Redirect to="/" /> : null}
+
       <Route exact path="/profile" component={Profile}/>
+      
     </Router>
   </Provider>,
   document.getElementById('root')
