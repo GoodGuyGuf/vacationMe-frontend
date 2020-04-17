@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
 import App from './App';
 import Home from './components/Home/Home.js';
 import Profile from './components/Profile/Profile.js';
-import './index.css';
+import './css/index.css';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
