@@ -14,13 +14,15 @@ import * as serviceWorker from './serviceWorker';
 const store = createStore(PostReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
-  <Router>
-    <Route exact path="/" component={App}/>
-    {localStorage.getItem('loggedIn') !== null ? <Redirect to="/home" /> : null}
-    <Route exact path="/home" component={Home}/>
-    {localStorage.getItem('loggedIn') === null ? <Redirect to="/" /> : null}
-    <Route exact path="/profile" component={Profile}/>
-  </Router>,
+  <Provider store={store}>
+    <Router>
+      <Route exact path="/" component={App}/>
+      {localStorage.getItem('loggedIn') !== null ? <Redirect to="/home" /> : null}
+      <Route exact path="/home" component={Home}/>
+      {localStorage.getItem('loggedIn') === null ? <Redirect to="/" /> : null}
+      <Route exact path="/profile" component={Profile}/>
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );
 
