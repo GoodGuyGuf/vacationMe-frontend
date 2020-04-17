@@ -12,6 +12,7 @@ export default class Profile extends React.Component{
                 <h1>{currentUser.username}</h1>
                 <p>{currentUser.name}</p>
                 <p>{currentUser.email}</p>
+                <h3><Link to="/" onClick={this.logout}>Logout</Link></h3>
             </div>
         )
     }
