@@ -1,6 +1,7 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
-export default class Login extends React.Component{
+class Login extends React.Component{
 
     state = {
         email: "",
@@ -31,7 +32,7 @@ export default class Login extends React.Component{
             if (json.message === "No User Found."){
                 console.log(json)
             } else {
-                console.log(json)
+                this.props.history.push("/home");
             }
         })
     }
@@ -58,3 +59,5 @@ export default class Login extends React.Component{
         )
     }
 }
+
+export default withRouter(Login);
