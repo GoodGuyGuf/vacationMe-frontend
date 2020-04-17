@@ -47,6 +47,7 @@ class Login extends React.Component{
     render(){
         return(
             <div id="loginform">
+                <h1>vacationMe</h1>
                 <form onSubmit={this.handleOnSubmit}>
                     <input onChange={this.handleOnChange}
                      type="email" 
@@ -54,12 +55,14 @@ class Login extends React.Component{
                      value={this.state.email} 
                      placeholder="Email"
                      />
+                     <br/>
                     <input onChange={this.handleOnChange}
                      type="password" 
                      name="password" 
                      value={this.state.password}
                      placeholder="Password"
                      />
+                     <br/>
                     <input type="submit"/>
                 </form>
             </div>
