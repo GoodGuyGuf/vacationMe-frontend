@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default class Profile extends React.Component{
+
+    logout = event => {
+        localStorage.removeItem("loggedIn")
+    }
     
     render(){
         const currentUser = JSON.parse(localStorage.getItem("loggedIn")).userData
