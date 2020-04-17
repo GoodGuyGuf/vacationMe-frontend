@@ -27,10 +27,4 @@ class Home extends React.Component{
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        fetchPosts: () => dispatch(fetchPosts())
-    }
-}
-
-export default connect(null, mapDispatchToProps)(Home)
+export default connect(null, { fetchPosts })(Home)
