@@ -1,18 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import App from './App';
 import Home from './components/Home/Home.js';
+import Profile from './components/Profile/Profile.js';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <Router>
     <Route exact path="/" component={App}/>
+    {localStorage.getItem('loggedIn') !== null ? <Redirect to="/home" /> : null}
     <Route exact path="/home" component={Home}/>
+    {localStorage.getItem('loggedIn') === null ? <Redirect to="/" /> : null}
+    <Route exact path="/profile" component={Profile}/>
   </Router>,
   document.getElementById('root')
 );
