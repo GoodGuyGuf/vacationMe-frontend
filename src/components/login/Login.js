@@ -30,10 +30,15 @@ class Login extends React.Component{
         .then(response => response.json())
         .then(json => {
             if (json.message === "No User Found."){
-                console.log(json)
+                alert("Incorrect Login")
             } else {
                 console.log(json.data)
-                localStorage.setItem('loggedIn', JSON.stringify({username: json.data.attributes.username}))
+                const userData = {
+                    name: json.data.attributes.name, 
+                    username: json.data.attributes.username, 
+                    email: json.data.attributes.email
+                }
+                localStorage.setItem('loggedIn', JSON.stringify({userData}))
                 this.props.history.push("/home");
             }
         })
