@@ -27,7 +27,13 @@ export default class Login extends React.Component{
 
         fetch("http://localhost:3000/login", user)
         .then(response => response.json())
-        .then(json => console.log(json))
+        .then(json => {
+            if (json.message === "No User Found."){
+                console.log(json)
+            } else {
+                console.log(json)
+            }
+        })
     }
 
     render(){
