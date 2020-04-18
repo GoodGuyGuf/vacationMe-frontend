@@ -5,12 +5,12 @@ import NavBar from '../Home/NavBar';
 class PostShow extends React.Component {
 
     findPost = postId => {
-        const post = this.props.posts[`${postId}`]
-        const user = this.props.users[`${post.userId}`]
+        const post = this.props.posts.find(post => post.id == postId)
+        const user = this.props.users.find(user => user.id == post.userId)
         if (post && user){
-            return {title: post.title, location: post.location, caption: post.caption, user: user.username}
+            return {post: post, user: user.username}
         } else {
-            return null
+            return "none"
         }
     }
 
@@ -18,10 +18,10 @@ class PostShow extends React.Component {
         return (
             <div>
             <NavBar/>
-                <h1>{this.findPost(this.props.match.params.id).title}</h1>
+                <h1>{this.findPost(this.props.match.params.id).post.title}</h1>
                 <h3>By: {this.findPost(this.props.match.params.id).user}</h3>
-                <h5>Location: {this.findPost(this.props.match.params.id).location}</h5>
-                <p>Caption: {this.findPost(this.props.match.params.id).caption}</p>
+                <h5>Location: {this.findPost(this.props.match.params.id).post.location}</h5>
+                <p>Caption: {this.findPost(this.props.match.params.id).post.caption}</p>
             </div>
         )
     }
