@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Post extends React.Component{
 
@@ -18,7 +19,7 @@ class Post extends React.Component{
             <div>{this.props.posts.map((post, index) => { 
                 return (<div key={index} id={'post_' + index}>
                     <h3>{post.location}</h3>
-                    <h5>{post.title}</h5>
+                    <h5><Link key={post.id} to={`/posts/${post.id}`}>{post.title}</Link></h5>
                     <h6>By: {this.findUser(post.userId)}</h6>
                     <p>{post.caption}</p>
                     </div>) 
