@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import NavBar from '../Home/NavBar';
-
+// this component is rendering more than once after each link click. Needs fix.
 class Profile extends React.Component{
 
     findPosts = user => {
