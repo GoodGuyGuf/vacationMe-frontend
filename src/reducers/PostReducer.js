@@ -1,9 +1,9 @@
-export default function PostReducer(state = {posts: [], requesting: false}, action){
+export default function PostReducer(state = [], action){
     switch (action.type){
         case "ADD_POST":
-            return {posts: [...state.posts, action.post]};
+            return [...state, action.post];
         case 'START_LOADING_USERS_POSTS':
-            return {posts: [...state.posts], requesting: true}
+            return [...state];
         default:
             return state;
     }

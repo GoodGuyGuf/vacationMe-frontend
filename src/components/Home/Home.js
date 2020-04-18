@@ -1,13 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Post from './Post';
-import {fetchPosts} from '../../actions/FetchPosts';
+import { fetchPosts } from '../../actions/FetchPosts';
+import { fetchUsers } from '../../actions/FetchUsers';
 import NavBar from './NavBar';
 
 class Home extends React.Component{
 
     componentDidMount(){
         this.props.fetchPosts()
+        this.props.fetchUsers()
     }
 
     render(){
@@ -20,4 +22,4 @@ class Home extends React.Component{
     }
 }
 
-export default connect(null, { fetchPosts })(Home)
+export default connect(null, { fetchPosts, fetchUsers })(Home)
