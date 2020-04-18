@@ -22,7 +22,15 @@ class Profile extends React.Component{
                 <p>{currentUser.name}</p>
                 <p>{currentUser.email}</p>
                 <h5>Posts:</h5>
-                {this.findPosts(currentUser.id).map(post => <div>{post.title}</div>)}
+                {this.findPosts(currentUser.id).map(post => {
+                        return (
+                            <div>
+                                <h4>{post.title}</h4>
+                                <p>{post.caption}</p>
+                            </div>
+                        )
+                    })
+                }
             </div>
         )
     }
