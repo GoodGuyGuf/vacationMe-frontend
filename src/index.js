@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import App from './App';
+import Signup from './components/Signup/Signup';
 import Home from './components/Home/Home.js';
 import Profile from './components/Profile/Profile.js';
 import rootReducer from './reducers/CombineReducer.js';
@@ -19,6 +20,8 @@ ReactDOM.render(
 
       <Route exact path="/" component={App}/>
         {localStorage.getItem('loggedIn') !== null ? <Redirect to="/home" /> : null}
+
+        <Route exact path="/signup" component={Signup}/>
 
       <Route exact path="/home" component={Home}/>
         {localStorage.getItem('loggedIn') === null ? <Redirect to="/" /> : null}
