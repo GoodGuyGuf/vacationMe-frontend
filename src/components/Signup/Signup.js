@@ -7,8 +7,7 @@ class Signup extends React.Component{
         name: "",
         username: "",
         email: "",
-        password: "",
-        password_confirmation: ""
+        password: ""
     }
 
     handleOnChange = event => {
@@ -59,8 +58,6 @@ class Signup extends React.Component{
                 <input type="email" name="email" value={this.state.email} placeholder="Email"/>
                 <br />
                 <input type="password" name="password" value={this.state.password} placeholder="Password"/>
-                <br />
-                <input type="password" name="password_confirmation" value={this.state.password} placeholder="Password"/>
                 <br />
                 <input type="submit" value="Sign Up"/>
             </form>
