@@ -64,7 +64,7 @@ class Login extends React.Component{
                      placeholder="Password"
                      />
                      <br/>
-                    <input type="submit"/>
+                    <input type="submit" value="Log In"/>
                 </form>
                 <h2>Don't have an account? <Link to="/signup">Signup</Link></h2>
             </div>
