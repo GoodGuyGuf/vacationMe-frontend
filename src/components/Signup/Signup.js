@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class Signup extends React.Component{
 
@@ -64,6 +64,7 @@ class Signup extends React.Component{
                 <br />
                 <input type="submit" value="Sign Up"/>
             </form>
+            <h2>Already have an account? <Link to="/">Log In</Link></h2>
         </div>
         )
     }
