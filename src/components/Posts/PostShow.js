@@ -18,10 +18,9 @@ class PostShow extends React.Component {
 
     render(){
         const currentUser = JSON.parse(localStorage.getItem("loggedIn")).userData
-
         let edit;
         if (this.findPost(this.props.match.params.id).user.id === currentUser.id){
-            edit = (<Link to='/posts/:id/edit'>Edit Post</Link>)
+            edit = (<Link to={"/posts/" + this.props.match.params.id + '/edit'}>Edit Post</Link>)
         }
         return (
             <div>
