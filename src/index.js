@@ -9,6 +9,7 @@ import Signup from './components/Signup/Signup';
 import Home from './components/Home/Home.js';
 import Profile from './components/Profile/Profile.js';
 import PostShow from './components/Posts/PostShow';
+import PostEdit from './components/Posts/PostEdit';
 import rootReducer from './reducers/CombineReducer.js';
 import './css/index.css';
 import * as serviceWorker from './serviceWorker';
@@ -29,6 +30,7 @@ ReactDOM.render(
 
       <Route exact path="/profile" component={Profile}/>
       <Route exact path="/posts/:id" render={routerProps => <PostShow {...routerProps} />}/>
+      <Route exact path="/posts/:id/edit" render={routerProps => <PostEdit {...routerProps} />}/>
       
     </Router>
   </Provider>,

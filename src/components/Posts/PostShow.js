@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import NavBar from '../Home/NavBar';
+import PostEdit from './PostEdit';
+import { Link } from 'react-router-dom';
 
 class PostShow extends React.Component {
 
@@ -8,20 +10,27 @@ class PostShow extends React.Component {
         const post = this.props.posts.find(post => post.id == postId)
         const user = this.props.users.find(user => user.id == post.userId)
         if (post && user){
-            return {post: post, user: user.username}
+            return {post: post, user: user}
         } else {
             return "none"
         }
     }
 
     render(){
+        const currentUser = JSON.parse(localStorage.getItem("loggedIn")).userData
+
+        let edit;
+        if (this.findPost(this.props.match.params.id).user.id === currentUser.id){
+            edit = (<Link to='/posts/:id/edit'>Edit Post</Link>)
+        }
         return (
             <div>
             <NavBar/>
                 <h1>{this.findPost(this.props.match.params.id).post.title}</h1>
-                <h3>By: {this.findPost(this.props.match.params.id).user}</h3>
+                <h3>By: {this.findPost(this.props.match.params.id).user.username}</h3>
                 <h5>Location: {this.findPost(this.props.match.params.id).post.location}</h5>
                 <p>Caption: {this.findPost(this.props.match.params.id).post.caption}</p>
+                {edit}
             </div>
         )
     }
