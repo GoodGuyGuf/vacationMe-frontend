@@ -1,6 +1,8 @@
 import React from 'react';
+import { createPost } from '../../actions/CreatePost.js'
+import { connect } from 'react-redux';
 
-export default class PostForm extends React.Component{
+class PostForm extends React.Component{
 
     state = {
         title: "",
@@ -36,12 +38,14 @@ export default class PostForm extends React.Component{
                 alert("Unable to save.")
             } else {
                 console.log(json.data)
-                // const postData = {
-                //     id: json.data.id,
-                //     name: json.data.attributes.name, 
-                //     username: json.data.attributes.username, 
-                //     email: json.data.attributes.email
-                // }
+                const postData = {
+                    id: json.data.id,
+                    title: json.data.attributes.title, 
+                    location: json.data.attributes.location, 
+                    caption: json.data.attributes.caption,
+                    userId: json.data.attributes.user_id
+                }
+                this.props.createPost(postData)
             }
         })
     }
@@ -63,3 +67,5 @@ export default class PostForm extends React.Component{
         )
     }
 }
+
+export default connect(null, {createPost})(PostForm)
