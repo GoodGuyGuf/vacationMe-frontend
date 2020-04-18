@@ -34,6 +34,7 @@ class Login extends React.Component{
             } else {
                 console.log(json.data)
                 const userData = {
+                    id: json.data.id,
                     name: json.data.attributes.name, 
                     username: json.data.attributes.username, 
                     email: json.data.attributes.email
