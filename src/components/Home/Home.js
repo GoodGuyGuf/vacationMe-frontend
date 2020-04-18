@@ -4,6 +4,8 @@ import Post from './Post';
 import { fetchPosts } from '../../actions/FetchPosts';
 import { fetchUsers } from '../../actions/FetchUsers';
 import NavBar from './NavBar';
+import { Link } from 'react-router-dom';
+import PostForm from '../PostForm/PostForm';
 
 class Home extends React.Component{
 
@@ -16,6 +18,7 @@ class Home extends React.Component{
         return(
             <div>
                 <NavBar/>
+                <PostForm/>
                 <Post/>
             </div>
         )
