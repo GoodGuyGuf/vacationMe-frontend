@@ -27,10 +27,10 @@ class Signup extends React.Component{
             body: JSON.stringify(this.state)
         }
 
-        fetch("http://localhost:3000/signup", user)
+        fetch("http://localhost:3000/users", user)
         .then(response => response.json())
         .then(json => {
-            if (json.message === "No User Found."){
+            if (json.message === "Incorrect fields"){
                 alert("Incorrect Login")
             } else {
                 console.log(json.data)
@@ -50,14 +50,14 @@ class Signup extends React.Component{
         return (
         <div id="signupForm">
         <h1>vacationMe</h1>
-            <form onChange={this.handleOnChange}>
-                <input type="text" name="name" value={this.state.name} placeholder="Name"/>
+            <form onSubmit={this.handleOnSubmit}>
+                <input onChange={this.handleOnChange} type="text" name="name" value={this.state.name} placeholder="Name"/>
                 <br />
-                <input type="text" name="username" value={this.state.username} placeholder="Username"/>
+                <input onChange={this.handleOnChange} type="text" name="username" value={this.state.username} placeholder="Username"/>
                 <br />
-                <input type="email" name="email" value={this.state.email} placeholder="Email"/>
+                <input onChange={this.handleOnChange} type="email" name="email" value={this.state.email} placeholder="Email"/>
                 <br />
-                <input type="password" name="password" value={this.state.password} placeholder="Password"/>
+                <input onChange={this.handleOnChange} type="password" name="password" value={this.state.password} placeholder="Password"/>
                 <br />
                 <input type="submit" value="Sign Up"/>
             </form>
