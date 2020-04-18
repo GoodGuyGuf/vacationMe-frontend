@@ -40,14 +40,14 @@ class PostEdit extends React.Component{
                 alert("Unable to save.")
             } else {
                 console.log(json)
-                // const postData = {
-                //     id: json.data.id,
-                //     title: json.data.attributes.title, 
-                //     location: json.data.attributes.location, 
-                //     caption: json.data.attributes.caption,
-                //     userId: json.data.attributes.user_id
-                // }
-                // this.props.updatePost(postData)
+                const postData = {
+                    id: json.data.id,
+                    title: json.data.attributes.title, 
+                    location: json.data.attributes.location, 
+                    caption: json.data.attributes.caption,
+                    userId: json.data.attributes.user_id
+                }
+                this.props.updatePost(postData)
             }
         })
     }

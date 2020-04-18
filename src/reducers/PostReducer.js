@@ -3,7 +3,8 @@ export default function PostReducer(state = [], action){
         case "ADD_POST":
             return [...state, action.post];
         case "UPDATE_POST":
-            console.log([...state, action.post])
+            const array = state.filter(object => object.id != action.post.id)
+            return [...array, action.post]
         case 'START_LOADING_USERS_POSTS':
             return [...state];
         default:
