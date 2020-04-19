@@ -1,11 +1,27 @@
 import React from 'react';
 import Login from './components/login/Login.js';
+import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import Signup from './components/Signup/Signup';
+import Home from './components/Home/Home.js';
+import Profile from './components/Profile/Profile.js';
+import PostShow from './components/Posts/PostShow';
+import PostEdit from './components/Posts/PostEdit';
 import { fetchPosts } from './actions/FetchPosts';
 import { fetchUsers } from './actions/FetchUsers';
-import { connect } from 'react-redux';
+import { createPost } from './actions/CreatePost.js'
 import './css/App.css';
 
 class App extends React.Component{
+
+  findUser = searchedUser => {
+    const user = this.props.users.find(user => user.id == searchedUser)
+    if (user){
+        return user.username
+    } else {
+        return null
+    }
+}
 
   componentDidMount(){
     this.props.fetchPosts()
@@ -15,11 +31,24 @@ class App extends React.Component{
   render(){
     return (
       <div>
-          <h1 id="pre-logo">vacationMe</h1>
-          <Login/>
+        <Router>
+
+            <Route exact path="/login" render={() => <div><h1 id="pre-logo">vacationMe</h1><Login/></div>} />
+              {localStorage.getItem('loggedIn') !== null ? <Redirect to="/" /> : null}
+
+            <Route exact path="/signup" component={Signup}/>
+
+            <Route exact path="/" render={routerProps => <Home {...routerProps} posts={this.props.posts} users={this.props.users} createPost={this.props.createPost} findUser={this.findUser} />}/>
+              {localStorage.getItem('loggedIn') === null ? <Redirect to="/login" /> : null}
+
+            <Route exact path="/profile" component={Profile}/>
+            <Route exact path="/posts/:id" render={routerProps => <PostShow {...routerProps} />}/>
+            <Route exact path="/posts/:id/edit" render={routerProps => <PostEdit {...routerProps} />}/>
+
+        </Router>
       </div>
     );
   }
 }
 
-export default connect(null, {fetchPosts, fetchUsers})(App);
+export default connect(state => ({posts: state.posts, users: state.users}), {fetchPosts, fetchUsers, createPost})(App);

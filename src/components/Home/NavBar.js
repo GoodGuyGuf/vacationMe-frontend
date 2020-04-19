@@ -9,10 +9,10 @@ const NavBar = () => {
 
     return (
         <div id="NavBar">
-        <h1><Link to="/home" >Home</Link></h1>
+        <h1><Link to="/" >Home</Link></h1>
         <h1 id="logo">vacationMe</h1>
         <h1 id="profile"><Link to="/profile">Profile</Link></h1>
-        <h1 id="logout"><Link to="/" onClick={logout}>Logout</Link></h1>
+        <h1 id="logout"><Link to="/login" onClick={logout}>Logout</Link></h1>
         {/* <h1><Link to="/destinations">Destinations</Link></h1> */}
         </div>
     )

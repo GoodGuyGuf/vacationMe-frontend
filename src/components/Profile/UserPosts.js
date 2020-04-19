@@ -49,7 +49,7 @@ class UserPosts extends React.Component{
                         <p>{post.caption}</p>
                         <h4><Link key={index} to={`/posts/${post.id}/edit`}>Edit</Link></h4>
                         <span>Created at: {post.createdAt}</span><br/>
-                        <span>Updated at: {post.updatedAt}</span>
+                        <span>Updated at: {post.updatedAt}</span><br />
                         <button onClick={() => {this.deleter(post)}}>Delete</button>
                     </div>
                         )
