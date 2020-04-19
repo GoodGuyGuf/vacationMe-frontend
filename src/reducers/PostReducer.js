@@ -10,6 +10,8 @@ export default function PostReducer(state = [], action){
             return [...state.slice(0, idx), ...state.slice(idx + 1)];
         case 'START_LOADING_USERS_POSTS':
             return [...state];
+        case "REMOVE_ALL_POSTS":
+            return []
         default:
             return state;
     }

@@ -1,8 +1,23 @@
 import React from 'react';
 import NavBar from '../Home/NavBar';
 import UserPosts from './UserPosts';
+import { fetchPosts } from '../../actions/FetchPosts';
+import { fetchUsers } from '../../actions/FetchUsers';
+import { removePosts } from '../../actions/RemovePosts';
+import { removeUsers } from '../../actions/RemoveUsers';
+import { connect } from 'react-redux';
 // this component is rendering more than once after each link click. Needs fix.
-export default class Profile extends React.Component{
+class Profile extends React.Component{
+
+    componentDidMount(){
+        this.props.fetchPosts()
+        this.props.fetchUsers()
+    }
+
+    componentWillUnmount(){
+        this.props.removePosts()
+        this.props.removeUsers()
+    }
     
     render(){
         const currentUser = JSON.parse(localStorage.getItem("loggedIn")).userData
@@ -18,3 +33,5 @@ export default class Profile extends React.Component{
         )
     }
 }
+
+export default connect(null, {fetchPosts, fetchUsers, removePosts, removeUsers})(Profile)
