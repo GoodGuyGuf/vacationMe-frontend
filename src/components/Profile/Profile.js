@@ -28,10 +28,10 @@ class Profile extends React.Component{
                 <p id="userInfo">{currentUser.name}</p>
                 <p id="userInfo">{currentUser.email}</p>
                 <h5 id="userposts">Posts:</h5>
-                <UserPosts/>
+                <UserPosts posts={this.props.posts}/>
             </div>
         )
     }
 }
 
-export default connect(null, {fetchPosts, fetchUsers, removePosts, removeUsers})(Profile)
+export default connect(state => ({posts: state.posts}), {fetchPosts, fetchUsers, removePosts, removeUsers})(Profile)
