@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class UserPosts extends React.Component{
 
@@ -16,11 +17,12 @@ class UserPosts extends React.Component{
         const currentUser = JSON.parse(localStorage.getItem("loggedIn")).userData
         return(
             <div>
-            {this.findPosts(currentUser.id).map(post => {
+            {this.findPosts(currentUser.id).map((post, index) => {
                 return (
-                    <div id="UserPost">
+                    <div key={index} id="UserPost">
                         <h4>{post.title}</h4>
                         <p>{post.caption}</p>
+                        <h4><Link key={index} to={`/posts/${post.id}/edit`}>Edit</Link></h4>
                     </div>
                         )
                     })
