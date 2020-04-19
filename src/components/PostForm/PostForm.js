@@ -22,6 +22,7 @@ class PostForm extends React.Component{
 
     handleOnSubmit = event => {
         event.preventDefault();
+        const currentUser = JSON.parse(localStorage.getItem("loggedIn")).userData
         const post = {
             method: "POST",
             headers: {
@@ -43,7 +44,7 @@ class PostForm extends React.Component{
                     title: json.data.attributes.title, 
                     location: json.data.attributes.location, 
                     caption: json.data.attributes.caption,
-                    userId: json.data.attributes.user_id,
+                    userId: currentUser.id,
                     createdAt: json.data.attributes.created_at,
                     updatedAt: json.data.attributes.updated_at
                 }
@@ -68,4 +69,4 @@ class PostForm extends React.Component{
     }
 }
 
-export default compose(withRouter)(PostForm)
+export default withRouter(PostForm)
