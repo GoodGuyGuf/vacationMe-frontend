@@ -4,7 +4,6 @@ export function fetchUsers(){
             fetch("http://localhost:3000/users")
             .then(response => response.json())
             .then(json => {
-                console.log(json)
                 json.data.forEach(element => {
                     dispatch({
                         type: "ADD_USER", 

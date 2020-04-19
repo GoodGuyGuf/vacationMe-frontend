@@ -1,8 +1,6 @@
 import React from 'react';
-import { createPost } from '../../actions/CreatePost.js'
-import { connect } from 'react-redux';
 
-class PostForm extends React.Component{
+export default class PostForm extends React.Component{
 
     state = {
         title: "",
@@ -66,5 +64,3 @@ class PostForm extends React.Component{
         )
     }
 }
-
-export default connect(null, {createPost})(PostForm)

@@ -32,7 +32,6 @@ class Login extends React.Component{
             if (json.message === "No User Found."){
                 alert("Incorrect Login")
             } else {
-                console.log(json.data)
                 const userData = {
                     id: json.data.id,
                     name: json.data.attributes.name, 

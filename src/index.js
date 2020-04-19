@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
+import { persistStore, persistReducer } from 'redux-persist'
+import { PersistGate } from 'redux-persist/integration/react'
+import storage from 'redux-persist/lib/storage'
 import thunk from 'redux-thunk';
 import App from './App';
 import Signup from './components/Signup/Signup';
@@ -14,25 +17,34 @@ import rootReducer from './reducers/CombineReducer.js';
 import './css/index.css';
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(rootReducer, applyMiddleware(thunk))
+const config = {key: "my-storage", storage}
+
+const persistedReducer = persistReducer(config, rootReducer)
+
+const store = createStore(persistedReducer, applyMiddleware(thunk))
+
+const persistor = persistStore(store)
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
+    <PersistGate loading={null} persistor={persistor}>
 
-      <Route exact path="/" component={App}/>
-        {localStorage.getItem('loggedIn') !== null ? <Redirect to="/home" /> : null}
+      <Router>
 
-        <Route exact path="/signup" component={Signup}/>
+        <Route exact path="/" component={App}/>
+          {localStorage.getItem('loggedIn') !== null ? <Redirect to="/home" /> : null}
 
-      <Route exact path="/home" component={Home}/>
-        {localStorage.getItem('loggedIn') === null ? <Redirect to="/" /> : null}
+          <Route exact path="/signup" component={Signup}/>
 
-      <Route exact path="/profile" component={Profile}/>
-      <Route exact path="/posts/:id" render={routerProps => <PostShow {...routerProps} />}/>
-      <Route exact path="/posts/:id/edit" render={routerProps => <PostEdit {...routerProps} />}/>
+          <Route exact path="/home" component={Home}/>
+            {localStorage.getItem('loggedIn') === null ? <Redirect to="/" /> : null}
+
+          <Route exact path="/profile" component={Profile}/>
+          <Route exact path="/posts/:id" render={routerProps => <PostShow {...routerProps} />}/>
+          <Route exact path="/posts/:id/edit" render={routerProps => <PostEdit {...routerProps} />}/>
       
-    </Router>
+      </Router>
+    </PersistGate>
   </Provider>,
   document.getElementById('root')
 );
