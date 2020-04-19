@@ -68,12 +68,12 @@ h1#logo{
 #profile{
     position: absolute;
     top: 0%;
-    right: 1%;
+    right: 9%;
 }
 
 #logout{
     position: absolute;
-    top: 7%;
+    top: 0%;
     right: 1%;
 }
 
