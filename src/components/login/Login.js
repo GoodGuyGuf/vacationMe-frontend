@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import Logo from '../../components/Logo/Logo.js'
 
 class Login extends React.Component{
 
@@ -48,7 +49,7 @@ class Login extends React.Component{
     render(){
         return(
             <div id="loginform">
-                <h1>vacationMe</h1>
+                <Logo />
                 <form onSubmit={this.handleOnSubmit}>
                     <input onChange={this.handleOnChange}
                      type="email" 
