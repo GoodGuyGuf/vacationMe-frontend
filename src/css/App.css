@@ -122,9 +122,9 @@ div[id^="post_"]{
     border: solid 1px;
     border-color: rgb(80, 80, 80);
     border-radius: 5px;
-    margin: 2% 37%;
+    margin: 2% 40%;
     padding: 2%;
-    height: 40px;
+    height: 45px;
     width: 100px;
     font-size: 13pt;
 }
