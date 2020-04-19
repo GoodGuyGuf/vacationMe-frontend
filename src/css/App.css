@@ -1,0 +1,85 @@
+h1#logo{
+    text-align: center;
+    background-color: rgb(161, 255, 255);
+}
+
+#loginform{
+    margin: 10% auto;
+    display: table;
+    padding: 1%;
+}
+
+#loginform form{
+    border: solid 2px;
+    border-color: rgb(80, 80, 80);
+    border-radius: 2%;
+    padding: 2%;
+    position: relative;
+    margin-top: 7%;
+    text-align: center;
+}
+
+#loginInput{
+    border: solid 1px;
+    border-color: rgb(80, 80, 80);
+    border-radius: 3px;
+    margin-top: 3%;
+    padding: 2%;
+    height: 30px;
+    width: 200px;
+    font-size: 20pt;
+}
+
+#loginInput:hover{
+    background-color: rgb(220, 253, 255);
+    transition-duration: 0.5s;
+}
+
+#loginSubmit{
+    border: solid 1px;
+    border-color: rgb(80, 80, 80);
+    border-radius: 5px;
+    margin-top: 3%;
+    padding: 2%;
+    height: 40px;
+    width: 100px;
+    font-size: 13pt;
+}
+
+#loginSubmit:hover{
+    background-color: rgb(161, 255, 255);
+    transition-duration: 1s;
+}
+
+/* This marks the end of the login page */
+
+#signup{
+    margin: 10% auto;
+    display: table;
+    border: solid 2px;
+    border-color: rgb(80, 80, 80);
+    border-radius: 2%;
+    padding: 1%;
+}
+
+/* This marks the end of the signup page */
+
+#profile{
+    position: absolute;
+    top: 0%;
+    right: 1%;
+}
+
+#logout{
+    position: absolute;
+    top: 7%;
+    right: 1%;
+}
+
+div[id^="post_"]{
+    padding: 2%;
+    border: solid 2px;
+    border-color: black;
+}
+
+/* This is the end of the home page */

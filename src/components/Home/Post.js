@@ -16,7 +16,7 @@ class Post extends React.Component{
     render(){
         return (
         <div id="posts">
-            <div>{this.props.posts.map((post, index) => { 
+            {this.props.posts.map((post, index) => { 
                 return (<div key={index} id={'post_' + index}>
                     <h3>{post.location}</h3>
                     <h5><Link key={post.id} to={`/posts/${post.id}`}>{post.title}</Link></h5>
@@ -24,7 +24,6 @@ class Post extends React.Component{
                     <p>{post.caption}</p>
                     </div>) 
                 })}
-            </div>
         </div>
         )
     }

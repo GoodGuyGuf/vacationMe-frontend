@@ -48,20 +48,20 @@ class Signup extends React.Component{
 
     render(){
         return (
-        <div id="signupForm">
-        <h1>vacationMe</h1>
-            <form onSubmit={this.handleOnSubmit}>
-                <input onChange={this.handleOnChange} type="text" name="name" value={this.state.name} placeholder="Name"/>
+        <div>
+        <h1 id="logo">vacationMe</h1>
+            <form id="signup" onSubmit={this.handleOnSubmit}>
+                <input id="loginInput" onChange={this.handleOnChange} type="text" name="name" value={this.state.name} placeholder="Name"/>
                 <br />
-                <input onChange={this.handleOnChange} type="text" name="username" value={this.state.username} placeholder="Username"/>
+                <input id="loginInput" onChange={this.handleOnChange} type="text" name="username" value={this.state.username} placeholder="Username"/>
                 <br />
-                <input onChange={this.handleOnChange} type="email" name="email" value={this.state.email} placeholder="Email"/>
+                <input id="loginInput" onChange={this.handleOnChange} type="email" name="email" value={this.state.email} placeholder="Email"/>
                 <br />
-                <input onChange={this.handleOnChange} type="password" name="password" value={this.state.password} placeholder="Password"/>
+                <input id="loginInput" onChange={this.handleOnChange} type="password" name="password" value={this.state.password} placeholder="Password"/>
                 <br />
-                <input type="submit" value="Sign Up"/>
+                <input id="loginSubmit" type="submit" value="Sign Up"/>
+                <h2>Already have an account? <Link to="/">Log In</Link></h2>
             </form>
-            <h2>Already have an account? <Link to="/">Log In</Link></h2>
         </div>
         )
     }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../../components/Logo/Logo'
 
 const NavBar = () => {
 
@@ -10,9 +9,9 @@ const NavBar = () => {
 
     return (
         <div id="NavBar">
-        <h2><Link to="/home"><Logo /></Link></h2>
-        <h1><Link to="/profile">Profile</Link></h1>
-        <h3><Link to="/" onClick={logout}>Logout</Link></h3>
+        <h1 id="logo"><Link to="/home">vacationMe</Link></h1>
+        <h1 id="profile"><Link to="/profile">Profile</Link></h1>
+        <h3 id="logout"><Link to="/" onClick={logout}>Logout</Link></h3>
         {/* <h1><Link to="/destinations">Destinations</Link></h1> */}
         </div>
     )

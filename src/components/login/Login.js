@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import Logo from '../../components/Logo/Logo.js'
 
 class Login extends React.Component{
 
@@ -49,24 +48,23 @@ class Login extends React.Component{
     render(){
         return(
             <div id="loginform">
-                <Logo />
                 <form onSubmit={this.handleOnSubmit}>
-                    <input onChange={this.handleOnChange}
+                    <input id="loginInput" onChange={this.handleOnChange}
                      type="email" 
                      name="email" 
                      value={this.state.email} 
                      placeholder="Email"
                      />
                      <br/>
-                    <input onChange={this.handleOnChange}
+                    <input id="loginInput" onChange={this.handleOnChange}
                      type="password" 
                      name="password" 
                      value={this.state.password}
                      placeholder="Password"
                      />
                      <br/>
-                    <input type="submit" value="Log In"/>
-                    <h2>Don't have an account? <Link to="/signup">Signup</Link></h2>
+                    <input id="loginSubmit" type="submit" value="Log In"/>
+                    <h3>Don't have an account? <Link to="/signup">Signup</Link></h3>
                 </form>
             </div>
         )
