@@ -8,7 +8,7 @@ export default class Home extends React.Component{
     render(){
         return(
             <div>
-                <NavBar/>
+                <NavBar persistor={this.props.persistor}/>
                 <PostForm createPost={this.props.createPost}/>
                 <Post posts={this.props.posts} users={this.props.users} findUser={this.props.findUser}/>
             </div>

@@ -1,21 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const NavBar = () => {
+class NavBar extends React.Component {
 
-    const logout = event => {
+    logout = () => {
         localStorage.removeItem("loggedIn")
+        this.props.persistor.purge()
     }
-
-    return (
-        <div id="NavBar">
-        <h1><Link to="/" >Home</Link></h1>
-        <h1 id="logo">vacationMe</h1>
-        <h1 id="profile"><Link to="/profile">Profile</Link></h1>
-        <h1 id="logout"><Link to="/login" onClick={logout}>Logout</Link></h1>
-        {/* <h1><Link to="/destinations">Destinations</Link></h1> */}
-        </div>
-    )
+    render(){
+        return (
+            <div id="NavBar">
+                <h1><Link to="/" >Home</Link></h1>
+                <h1 id="logo">vacationMe</h1>
+                <h1 id="profile"><Link to="/profile">Profile</Link></h1>
+                <h1 id="logout"><Link to="/login" onClick={this.logout}>Logout</Link></h1>
+            </div>
+        )
+    }
 }
 
-export default NavBar
+export default connect(null)(NavBar)
