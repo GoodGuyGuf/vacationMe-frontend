@@ -7,12 +7,21 @@ import { connect } from 'react-redux';
 
 class Home extends React.Component{
 
+    findUser = searchedUser => {
+        const user = this.props.users.find(user => user.id == searchedUser)
+        if (user){
+            return user.username
+        } else {
+            return null
+        }
+    }
+
     render(){
         return(
             <div>
                 <NavBar/>
                 <PostForm createPost={this.props.createPost}/>
-                <Post posts={this.props.posts} users={this.props.users}/>
+                <Post posts={this.props.posts} users={this.props.users} findUser={this.findUser}/>
             </div>
         )
     }

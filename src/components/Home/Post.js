@@ -3,21 +3,12 @@ import { Link } from 'react-router-dom';
 
 export default class Post extends React.Component{
 
-    findUser = searchedUser => {
-        const user = this.props.users.find(user => user.id == searchedUser)
-        if (user){
-            return user.username
-        } else {
-            return null
-        }
-    }
-
     render(){
         return (
         <div id="posts">
             {this.props.posts.reverse().map((post, index) => { 
                 return (<div key={index} id={'post_' + index}>
-                <h2>@{this.findUser(post.userId)}</h2>
+                <h2>@{this.props.findUser(post.userId)}</h2>
                     <h3>Location: {post.location}</h3>
                     <h5><Link key={index} to={`/posts/${post.id}`}>Title: {post.title}</Link></h5>
                     <h3>Description: </h3>
