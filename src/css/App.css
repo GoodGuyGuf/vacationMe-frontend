@@ -13,7 +13,7 @@ h1#logo{
     border: solid 2px;
     border-color: rgb(80, 80, 80);
     border-radius: 2%;
-    padding: 2%;
+    padding: 8%;
     position: relative;
     margin-top: 7%;
     text-align: center;
@@ -26,7 +26,7 @@ h1#logo{
     margin-top: 3%;
     padding: 2%;
     height: 30px;
-    width: 200px;
+    width: 300px;
     font-size: 20pt;
 }
 
