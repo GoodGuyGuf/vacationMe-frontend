@@ -1,8 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-class Post extends React.Component{
+export default class Post extends React.Component{
 
     findUser = searchedUser => {
         const user = this.props.users.find(user => user.id == searchedUser)
@@ -31,5 +30,3 @@ class Post extends React.Component{
         )
     }
 }
-
-export default connect(state => ({posts: state.posts, users: state.users}))(Post)

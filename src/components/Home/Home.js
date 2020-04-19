@@ -12,10 +12,10 @@ class Home extends React.Component{
             <div>
                 <NavBar/>
                 <PostForm createPost={this.props.createPost}/>
-                <Post />
+                <Post posts={this.props.posts} users={this.props.users}/>
             </div>
         )
     }
 }
 
-export default connect(null, { createPost })(Home)
+export default connect(state => ({posts: state.posts, users: state.users}), { createPost })(Home)
