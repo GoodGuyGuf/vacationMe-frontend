@@ -10,7 +10,9 @@ class PostEdit extends React.Component{
         title: "",
         location: "",
         caption: "",
-        user_id: ""
+        user_id: "",
+        createdAt: "",
+        updatedAt: ""
     }
 
     componentDidMount(){
@@ -21,7 +23,9 @@ class PostEdit extends React.Component{
             title: post.title,
             location: post.location,
             caption: post.caption,
-            user_id: currentUser.id
+            user_id: currentUser.id,
+            createdAt: post.created_at,
+            updatedAt: post.updated_at
         })
     }
 
@@ -57,7 +61,9 @@ class PostEdit extends React.Component{
                     title: json.data.attributes.title, 
                     location: json.data.attributes.location, 
                     caption: json.data.attributes.caption,
-                    userId: json.data.attributes.user_id
+                    userId: json.data.attributes.user_id,
+                    createdAt: json.data.attributes.created_at,
+                    updatedAt: json.data.attributes.updated_at
                 }
                 this.props.updatePost(postData)
             }

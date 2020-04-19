@@ -22,6 +22,8 @@ export default class UserPosts extends React.Component{
                         <h4>{post.title}</h4>
                         <p>{post.caption}</p>
                         <h4><Link key={index} to={`/posts/${post.id}/edit`}>Edit</Link></h4>
+                        <span>Created at: {post.createdAt}</span><br/>
+                        <span>Updated at: {post.updatedAt}</span>
                     </div>
                         )
                     })

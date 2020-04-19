@@ -43,7 +43,9 @@ class PostForm extends React.Component{
                     title: json.data.attributes.title, 
                     location: json.data.attributes.location, 
                     caption: json.data.attributes.caption,
-                    userId: json.data.attributes.user_id
+                    userId: json.data.attributes.user_id,
+                    createdAt: json.data.attributes.created_at,
+                    updatedAt: json.data.attributes.updated_at
                 }
                 this.props.createPost(postData)
             }

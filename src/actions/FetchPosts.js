@@ -12,7 +12,9 @@ export function fetchPosts(){
                             title: element.attributes.title,
                             location: element.attributes.location,
                             caption: element.attributes.caption,
-                            userId: element.attributes.user_id
+                            userId: element.attributes.user_id,
+                            createdAt: element.attributes.created_at,
+                            updatedAt: element.attributes.updated_at
                         }
                     })
                 })

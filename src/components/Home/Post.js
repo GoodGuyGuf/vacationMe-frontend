@@ -21,7 +21,10 @@ class Post extends React.Component{
                 <h2>@{this.findUser(post.userId)}</h2>
                     <h3>Location: {post.location}</h3>
                     <h5><Link key={post.id} to={`/posts/${post.id}`}>Title: {post.title}</Link></h5>
-                    <p>Description: {post.caption}</p>
+                    <h3>Description: </h3>
+                    <h4>{post.caption}</h4>
+                    <span>Created at: {post.createdAt}</span><br/>
+                    <span>Updated at: {post.updatedAt}</span>
                     </div>) 
                 })}
         </div>
