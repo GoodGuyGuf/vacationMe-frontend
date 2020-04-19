@@ -83,4 +83,45 @@ div[id^="post_"]{
     border-color: black;
 }
 
+#PostForm{
+    margin: 0 auto;
+    margin-bottom: 1%;
+    display: table;
+    padding: 1% 5% 1% 5%;
+    border: solid 2px;
+    border-color: black;
+}
+#PostForm input[type="text"]{
+    border: solid 1px;
+    border-color: rgb(80, 80, 80);
+    border-radius: 3px;
+    margin-top: 3%;
+    padding: 2%;
+    height: 30px;
+    width: 400px;
+    font-size: 20pt;
+}
+
+#PostForm textarea{
+    border: solid 1px;
+    border-color: rgb(80, 80, 80);
+    border-radius: 3px;
+    margin-top: 3%;
+    padding: 2%;
+    height: 100px;
+    width: 400px;
+    font-size: 15pt;
+}
+
+#PostForm input[type="submit"]{
+    border: solid 1px;
+    border-color: rgb(80, 80, 80);
+    border-radius: 5px;
+    margin: 2% 37%;
+    padding: 2%;
+    height: 40px;
+    width: 100px;
+    font-size: 13pt;
+}
+
 /* This is the end of the home page */

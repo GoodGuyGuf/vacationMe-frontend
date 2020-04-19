@@ -18,10 +18,10 @@ class Post extends React.Component{
         <div id="posts">
             {this.props.posts.map((post, index) => { 
                 return (<div key={index} id={'post_' + index}>
-                    <h3>{post.location}</h3>
-                    <h5><Link key={post.id} to={`/posts/${post.id}`}>{post.title}</Link></h5>
-                    <h6>By: {this.findUser(post.userId)}</h6>
-                    <p>{post.caption}</p>
+                <h2>@{this.findUser(post.userId)}</h2>
+                    <h3>Location: {post.location}</h3>
+                    <h5><Link key={post.id} to={`/posts/${post.id}`}>Title: {post.title}</Link></h5>
+                    <p>Description: {post.caption}</p>
                     </div>) 
                 })}
         </div>
