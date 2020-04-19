@@ -1,7 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { deletePost } from '../../actions/DeletePost'
 
-export default class UserPosts extends React.Component{
+class UserPosts extends React.Component{
 
     findPosts = user => {
         const posts = this.props.posts.filter(post => post.userId == user)
@@ -10,6 +13,29 @@ export default class UserPosts extends React.Component{
         } else {
             return null
         }
+    }
+
+    deleter = post => {
+        const postMarkedForDeletion = {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(post.id)
+        }
+
+        fetch(`http://localhost:3000/posts/${post.id}`, postMarkedForDeletion)
+        .then(response => response.json())
+        .then(json => {
+            if (json.message === "Unable to delete"){
+                alert("Unable to Delete.")
+            } else {
+                console.log(json)
+                this.props.deletePost(post)
+                this.props.history.push("/profile")
+            }
+        })
     }
 
     render(){
@@ -24,6 +50,7 @@ export default class UserPosts extends React.Component{
                         <h4><Link key={index} to={`/posts/${post.id}/edit`}>Edit</Link></h4>
                         <span>Created at: {post.createdAt}</span><br/>
                         <span>Updated at: {post.updatedAt}</span>
+                        <button onClick={() => {this.deleter(post)}}>Delete</button>
                     </div>
                         )
                     })
@@ -32,3 +59,5 @@ export default class UserPosts extends React.Component{
         )
     }
 }
+
+export default compose(withRouter, connect(null, { deletePost }))(UserPosts)

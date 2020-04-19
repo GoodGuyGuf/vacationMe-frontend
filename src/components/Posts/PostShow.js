@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import NavBar from '../Home/NavBar';
 import { Link } from 'react-router-dom';
+import { deletePost } from '../../actions/DeletePost'
 
 class PostShow extends React.Component {
 
@@ -35,4 +36,4 @@ class PostShow extends React.Component {
 
 }
 
-export default connect(state => ({posts: state.posts, users: state.users}))(PostShow)
+export default connect(state => ({posts: state.posts, users: state.users}, { deletePost }))(PostShow)
