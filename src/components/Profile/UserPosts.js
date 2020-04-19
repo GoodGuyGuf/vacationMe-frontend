@@ -18,7 +18,7 @@ class UserPosts extends React.Component{
             <div>
             {this.findPosts(currentUser.id).map(post => {
                 return (
-                    <div>
+                    <div id="UserPost">
                         <h4>{post.title}</h4>
                         <p>{post.caption}</p>
                     </div>

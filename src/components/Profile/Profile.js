@@ -9,10 +9,10 @@ export default class Profile extends React.Component{
         return(
             <div>
                 <NavBar/>
-                <h1>{currentUser.username}</h1>
-                <p>{currentUser.name}</p>
-                <p>{currentUser.email}</p>
-                <h5>Posts:</h5>
+                <h1 id="userInfo">{currentUser.username}</h1>
+                <p id="userInfo">{currentUser.name}</p>
+                <p id="userInfo">{currentUser.email}</p>
+                <h5 id="userposts">Posts:</h5>
                 <UserPosts/>
             </div>
         )

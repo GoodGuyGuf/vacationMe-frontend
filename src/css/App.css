@@ -1,6 +1,7 @@
 h1#logo{
     text-align: center;
     background-color: rgb(161, 255, 255);
+    color: black;
 }
 
 #loginform{
@@ -129,3 +130,22 @@ div[id^="post_"]{
 }
 
 /* This is the end of the home page */
+
+#userInfo{
+    text-align: center;
+}
+
+#UserPost{
+    margin: 1% auto;
+    box-sizing: content-box;
+    width: 40%;
+    border: solid 1px;
+    border-color: rgb(80, 80, 80);
+    border-radius: 5px;
+}
+
+h5#userposts{
+    text-align: center;
+}
+
+/* This is the end of the Profile page */

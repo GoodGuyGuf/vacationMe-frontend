@@ -9,7 +9,7 @@ const NavBar = () => {
 
     return (
         <div id="NavBar">
-        <h1 id="logo"><Link to="/home">vacationMe</Link></h1>
+        <h1 id="logo"><Link to="/home" style={{ textDecoration: 'none', color: "black" }}>vacationMe</Link></h1>
         <h1 id="profile"><Link to="/profile">Profile</Link></h1>
         <h1 id="logout"><Link to="/" onClick={logout}>Logout</Link></h1>
         {/* <h1><Link to="/destinations">Destinations</Link></h1> */}
