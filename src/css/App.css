@@ -148,4 +148,47 @@ h5#userposts{
     text-align: center;
 }
 
+#editPost{
+    margin: 5% auto;
+    text-align: center;
+    border: solid 1px;
+    border-color: rgb(80, 80, 80);
+    border-radius: 5px;
+    box-sizing: content-box;
+    width: 800px;
+}
+
+#editPost input[type="text"]{
+    border: solid 1px;
+    border-color: rgb(80, 80, 80);
+    border-radius: 3px;
+    margin-top: 3%;
+    padding: 2%;
+    height: 30px;
+    width: 600px;
+    font-size: 20pt;
+}
+
+#editPost textarea{
+    border: solid 1px;
+    border-color: rgb(80, 80, 80);
+    border-radius: 3px;
+    margin-top: 3%;
+    padding: 2%;
+    height: 100px;
+    width: 600px;
+    font-size: 15pt;
+}
+
+#editPost input[type="submit"]{
+    border: solid 1px;
+    border-color: rgb(80, 80, 80);
+    border-radius: 5px;
+    margin: 2% 0%;
+    padding: 2%;
+    height: 50px;
+    width: 100px;
+    font-size: 13pt;
+}
+
 /* This is the end of the Profile page */
