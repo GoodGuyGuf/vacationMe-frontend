@@ -16,7 +16,7 @@ class Post extends React.Component{
     render(){
         return (
         <div id="posts">
-            {this.props.posts.map((post, index) => { 
+            {this.props.posts.reverse().map((post, index) => { 
                 return (<div key={index} id={'post_' + index}>
                 <h2>@{this.findUser(post.userId)}</h2>
                     <h3>Location: {post.location}</h3>

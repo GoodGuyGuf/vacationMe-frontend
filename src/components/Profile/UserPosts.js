@@ -42,7 +42,7 @@ class UserPosts extends React.Component{
         const currentUser = JSON.parse(localStorage.getItem("loggedIn")).userData
         return(
             <div>
-            {this.findPosts(currentUser.id).map((post, index) => {
+            {this.findPosts(currentUser.id).reverse().map((post, index) => {
                 return (
                     <div key={index} id="UserPost">
                         <h4>{post.title}</h4>
