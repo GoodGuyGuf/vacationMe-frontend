@@ -8,10 +8,10 @@ class PostShow extends React.Component {
     findPost = postId => {
         const post = this.props.posts.find(post => post.id == postId)
         const user = this.props.users.find(user => user.id == post.userId)
-        if (post && user){
+        if (post || user){
             return {post: post, user: user}
         } else {
-            return "none"
+            return {post: "none", user: "none"}
         }
     }
 

@@ -22,7 +22,6 @@ class PostForm extends React.Component{
 
     handleOnSubmit = event => {
         event.preventDefault();
-        const currentUser = JSON.parse(localStorage.getItem("loggedIn")).userData
         const post = {
             method: "POST",
             headers: {
@@ -38,13 +37,12 @@ class PostForm extends React.Component{
             if (json.message === "Unable to save."){
                 alert("Unable to save.")
             } else {
-                console.log(json.data)
                 const postData = {
                     id: json.data.id,
                     title: json.data.attributes.title, 
                     location: json.data.attributes.location, 
                     caption: json.data.attributes.caption,
-                    userId: currentUser.id,
+                    userId: json.data.attributes.user_id,
                     createdAt: json.data.attributes.created_at,
                     updatedAt: json.data.attributes.updated_at
                 }
