@@ -1,6 +1,8 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
 
-export default class PostForm extends React.Component{
+class PostForm extends React.Component{
 
     state = {
         title: "",
@@ -46,6 +48,7 @@ export default class PostForm extends React.Component{
                     updatedAt: json.data.attributes.updated_at
                 }
                 this.props.createPost(postData)
+                this.props.history.push(`/posts/${postData.id}`)
             }
         })
     }
@@ -64,3 +67,5 @@ export default class PostForm extends React.Component{
         )
     }
 }
+
+export default compose(withRouter)(PostForm)
