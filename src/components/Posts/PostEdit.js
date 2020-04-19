@@ -13,6 +13,18 @@ class PostEdit extends React.Component{
         user_id: ""
     }
 
+    componentDidMount(){
+        const post = this.props.posts.find(post => post.id === this.props.match.params.id)
+        const currentUser = JSON.parse(localStorage.getItem("loggedIn")).userData
+        this.setState({
+            id: this.props.match.params.id,
+            title: post.title,
+            location: post.location,
+            caption: post.caption,
+            user_id: currentUser.id
+        })
+    }
+
     handleOnChange = event => {
         const currentUser = JSON.parse(localStorage.getItem("loggedIn")).userData
         this.setState({
@@ -68,4 +80,4 @@ class PostEdit extends React.Component{
     }
 }
 
-export default connect (null, {updatePost})(PostEdit)
+export default connect (state => ({posts: state.posts}), {updatePost})(PostEdit)
