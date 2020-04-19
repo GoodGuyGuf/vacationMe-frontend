@@ -4,7 +4,7 @@ h1#logo{
 }
 
 #loginform{
-    margin: 10% auto;
+    margin: 5% auto;
     display: table;
     padding: 1%;
 }
@@ -54,12 +54,13 @@ h1#logo{
 /* This marks the end of the login page */
 
 #signup{
-    margin: 10% auto;
+    text-align: center;
+    margin: 5% auto;
     display: table;
     border: solid 2px;
     border-color: rgb(80, 80, 80);
     border-radius: 2%;
-    padding: 1%;
+    padding: 2%;
 }
 
 /* This marks the end of the signup page */

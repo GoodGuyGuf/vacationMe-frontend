@@ -60,7 +60,7 @@ class Signup extends React.Component{
                 <input id="loginInput" onChange={this.handleOnChange} type="password" name="password" value={this.state.password} placeholder="Password"/>
                 <br />
                 <input id="loginSubmit" type="submit" value="Sign Up"/>
-                <h2>Already have an account? <Link to="/">Log In</Link></h2>
+                <h3>Already have an account? <Link to="/">Log In</Link></h3>
             </form>
         </div>
         )
