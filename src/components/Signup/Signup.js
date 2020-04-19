@@ -49,7 +49,7 @@ class Signup extends React.Component{
     render(){
         return (
         <div>
-        <h1 id="logo">vacationMe</h1>
+        <h1 id="pre-logo">vacationMe</h1>
             <form id="signup" onSubmit={this.handleOnSubmit}>
                 <input id="loginInput" onChange={this.handleOnChange} type="text" name="name" value={this.state.name} placeholder="Name"/>
                 <br />

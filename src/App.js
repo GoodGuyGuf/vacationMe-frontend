@@ -5,7 +5,7 @@ import './css/App.css';
 function App() {
   return (
     <div>
-    <h1 id="logo">vacationMe</h1>
+        <h1 id="pre-logo">vacationMe</h1>
       <Login/>
     </div>
   );
