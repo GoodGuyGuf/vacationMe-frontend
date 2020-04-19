@@ -14,6 +14,11 @@ import './css/App.css';
 
 class App extends React.Component{
 
+  currentUser = () => {
+    const currentUser = JSON.parse(localStorage.getItem("loggedIn")).userData
+    return currentUser
+  }
+
   findUser = searchedUser => {
     const user = this.props.users.find(user => user.id == searchedUser)
     if (user){
@@ -21,7 +26,17 @@ class App extends React.Component{
     } else {
         return null
     }
-}
+  }
+
+  findPost = postId => {
+    const post = this.props.posts.find(post => post.id == postId)
+    const user = this.props.users.find(user => user.id == post.userId)
+      if (post || user){
+        return {post: post, user: user}
+      } else {
+        return {post: "none", user: "none"}
+    }
+  }
 
   componentDidMount(){
     this.props.fetchPosts()
@@ -42,7 +57,7 @@ class App extends React.Component{
               {localStorage.getItem('loggedIn') === null ? <Redirect to="/login" /> : null}
 
             <Route exact path="/profile" component={Profile}/>
-            <Route exact path="/posts/:id" render={routerProps => <PostShow {...routerProps} />}/>
+            <Route exact path="/posts/:id" render={routerProps => <PostShow {...routerProps} findPost={this.findPost} currentUser={this.currentUser} />}/>
             <Route exact path="/posts/:id/edit" render={routerProps => <PostEdit {...routerProps} />}/>
 
         </Router>
