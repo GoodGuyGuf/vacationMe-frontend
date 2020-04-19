@@ -3,9 +3,6 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { persistStore, persistReducer } from 'redux-persist'
-import { PersistGate } from 'redux-persist/integration/react'
-import storage from 'redux-persist/lib/storage'
 import thunk from 'redux-thunk';
 import App from './App';
 import Signup from './components/Signup/Signup';
@@ -17,17 +14,10 @@ import rootReducer from './reducers/CombineReducer.js';
 import './css/index.css';
 import * as serviceWorker from './serviceWorker';
 
-const config = {key: "my-storage", storage}
-
-const persistedReducer = persistReducer(config, rootReducer)
-
-const store = createStore(persistedReducer, applyMiddleware(thunk))
-
-const persistor = persistStore(store)
+const store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
 
       <Router>
 
@@ -44,7 +34,6 @@ ReactDOM.render(
           <Route exact path="/posts/:id/edit" render={routerProps => <PostEdit {...routerProps} />}/>
       
       </Router>
-    </PersistGate>
   </Provider>,
   document.getElementById('root')
 );
