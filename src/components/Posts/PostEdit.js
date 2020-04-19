@@ -1,9 +1,6 @@
 import React from 'react';
 import NavBar from '../Home/NavBar';
-import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { compose } from 'redux';
-import { updatePost } from '../../actions/UpdatePost.js'
 
 class PostEdit extends React.Component{
 
@@ -89,4 +86,4 @@ class PostEdit extends React.Component{
     }
 }
 
-export default compose(withRouter, connect(state => ({posts: state.posts}), {updatePost}))(PostEdit)
+export default withRouter(PostEdit)

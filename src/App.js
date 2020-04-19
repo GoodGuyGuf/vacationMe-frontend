@@ -10,6 +10,7 @@ import PostEdit from './components/Posts/PostEdit';
 import { fetchPosts } from './actions/FetchPosts';
 import { fetchUsers } from './actions/FetchUsers';
 import { createPost } from './actions/CreatePost.js'
+import { updatePost } from './actions/UpdatePost.js'
 import './css/App.css';
 
 class App extends React.Component{
@@ -58,7 +59,7 @@ class App extends React.Component{
 
             <Route exact path="/profile" component={Profile}/>
             <Route exact path="/posts/:id" render={routerProps => <PostShow {...routerProps} findPost={this.findPost} currentUser={this.currentUser} />}/>
-            <Route exact path="/posts/:id/edit" render={routerProps => <PostEdit {...routerProps} />}/>
+            <Route exact path="/posts/:id/edit" render={routerProps => <PostEdit {...routerProps} posts={this.props.posts} updatePost={this.props.updatePost} />}/>
 
         </Router>
       </div>
@@ -66,4 +67,4 @@ class App extends React.Component{
   }
 }
 
-export default connect(state => ({posts: state.posts, users: state.users}), {fetchPosts, fetchUsers, createPost})(App);
+export default connect(state => ({posts: state.posts, users: state.users}), {fetchPosts, fetchUsers, createPost, updatePost})(App);
