@@ -24,6 +24,7 @@ export default class Post extends React.Component{
                         <h4>{post.caption}</h4>
                         <span>Created at: {post.createdAt}</span><br/>
                         <span>Updated at: {post.updatedAt}</span>
+                        <h6>Likes: {post.likesCount}</h6>
                         <h5>Comments:</h5>
                         {this.renderComments(post)}
                     </div>) 

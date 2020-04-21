@@ -6,8 +6,8 @@ class NavBar extends React.Component {
 
     logout = () => {
         localStorage.removeItem("loggedIn")
-        this.props.persistor.purge()
     }
+    
     render(){
         return (
             <div id="NavBar">

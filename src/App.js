@@ -53,15 +53,15 @@ class App extends React.Component{
       <div>
         <Router>
 
-            <Route exact path="/login" render={() => <div><h1 id="pre-logo">vacationMe</h1><Login/></div>} />
+            <Route exact path="/login" render={() => <div><div id="container"><h1 id="pre-logo">vacationMe</h1></div><Login/></div>} />
               {localStorage.getItem('loggedIn') !== null ? <Redirect to="/" /> : null}
 
             <Route exact path="/signup" component={Signup}/>
 
-            <Route exact path="/" render={routerProps => <Home {...routerProps} posts={this.props.posts} users={this.props.users} comments={this.props.comments} likes={this.props.likes} createPost={this.props.createPost} findUser={this.findUser} persistor={this.props.persistor} />}/>
+            <Route exact path="/" render={routerProps => <Home {...routerProps} posts={this.props.posts} users={this.props.users} comments={this.props.comments} likes={this.props.likes} createPost={this.props.createPost} findUser={this.findUser}/>}/>
               {localStorage.getItem('loggedIn') === null ? <Redirect to="/login" /> : null}
 
-            <Route exact path="/profile" render={routerProps => <Profile {...routerProps} posts={this.props.posts} currentUser={this.currentUser} persistor={this.props.persistor} />} />
+            <Route exact path="/profile" render={routerProps => <Profile {...routerProps} posts={this.props.posts} currentUser={this.currentUser} />} />
 
             <Route exact path="/posts/:id" render={routerProps => <PostShow {...routerProps} findPost={this.findPost} currentUser={this.currentUser} />}/>
 
