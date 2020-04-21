@@ -3,9 +3,7 @@ export default function userReducer(state = [], action){
         case "ADD_USER":
             return [...state, action.user];
         case 'START_LOADING_USERS':
-            return [...state];
-        case "PURGE":
-            return state        
+            return [...state];      
         default:
             return state;
     }

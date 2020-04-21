@@ -7,8 +7,6 @@ export default function LikeReducer(state = [], action){
             return [...state.slice(0, idx), ...state.slice(idx + 1)];
         case 'START_LOADING_LIKES':
             return [...state];
-        case "PURGE":
-            return state
         default:
             return state;
     }
