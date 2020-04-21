@@ -5,10 +5,9 @@ export function fetchComments(){
             .then(response => response.json())
             .then(json => {
                 json.data.forEach(element => {
-                    console.log(json.data)
                     dispatch({
                         type: "ADD_COMMENT", 
-                        like: {
+                        comment: {
                             id: element.id, 
                             description: element.attributes.description,
                             userId: element.attributes.user_id,

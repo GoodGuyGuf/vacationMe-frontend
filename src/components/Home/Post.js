@@ -3,7 +3,15 @@ import { Link } from 'react-router-dom';
 
 export default class Post extends React.Component{
 
+    renderComments = post => {
+        let comments = this.props.comments.filter(comment => comment.postId == post.id)
+        if (comments){
+            return comments.map(comment => <div><p>{comment.description}</p></div>)
+        }
+    }
+
     render(){
+        console.log(this.props.comments)
         return (
         <div id="posts">
             <div id="post-container">
@@ -16,6 +24,8 @@ export default class Post extends React.Component{
                         <h4>{post.caption}</h4>
                         <span>Created at: {post.createdAt}</span><br/>
                         <span>Updated at: {post.updatedAt}</span>
+                        <h5>Comments:</h5>
+                        {this.renderComments(post)}
                     </div>) 
                 })}
             </div>

@@ -5,7 +5,6 @@ export function fetchLikes(){
             .then(response => response.json())
             .then(json => {
                 json.data.forEach(element => {
-                    console.log(json.data)
                     dispatch({
                         type: "ADD_LIKE", 
                         like: {

@@ -58,7 +58,7 @@ class App extends React.Component{
 
             <Route exact path="/signup" component={Signup}/>
 
-            <Route exact path="/" render={routerProps => <Home {...routerProps} posts={this.props.posts} users={this.props.users} createPost={this.props.createPost} findUser={this.findUser} persistor={this.props.persistor} />}/>
+            <Route exact path="/" render={routerProps => <Home {...routerProps} posts={this.props.posts} users={this.props.users} comments={this.props.comments} likes={this.props.likes} createPost={this.props.createPost} findUser={this.findUser} persistor={this.props.persistor} />}/>
               {localStorage.getItem('loggedIn') === null ? <Redirect to="/login" /> : null}
 
             <Route exact path="/profile" render={routerProps => <Profile {...routerProps} posts={this.props.posts} currentUser={this.currentUser} persistor={this.props.persistor} />} />
