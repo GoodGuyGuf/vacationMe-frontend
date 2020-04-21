@@ -9,6 +9,8 @@ import PostShow from './components/Posts/PostShow';
 import PostEdit from './components/Posts/PostEdit';
 import { fetchPosts } from './actions/FetchPosts';
 import { fetchUsers } from './actions/FetchUsers';
+import { fetchLikes } from './actions/FetchLikes';
+import { fetchComments } from './actions/FetchComments';
 import { createPost } from './actions/CreatePost.js'
 import { updatePost } from './actions/UpdatePost.js'
 import './css/App.css';
@@ -42,6 +44,8 @@ class App extends React.Component{
   componentDidMount(){
     this.props.fetchPosts()
     this.props.fetchUsers()
+    this.props.fetchLikes()
+    this.props.fetchComments()
   }
 
   render(){
@@ -69,4 +73,4 @@ class App extends React.Component{
   }
 }
 
-export default connect(state => ({posts: state.posts, users: state.users}), {fetchPosts, fetchUsers, createPost, updatePost})(App);
+export default connect(state => ({posts: state.posts, users: state.users}), {fetchPosts, fetchUsers, fetchLikes, fetchComments, createPost, updatePost})(App);
