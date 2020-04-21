@@ -5,6 +5,7 @@ export function fetchPosts(){
             .then(response => response.json())
             .then(json => {
                 json.data.forEach(element => {
+                    console.log(json.data)
                     dispatch({
                         type: "ADD_POST", 
                         post: {
@@ -14,7 +15,8 @@ export function fetchPosts(){
                             caption: element.attributes.caption,
                             userId: element.attributes.user_id,
                             createdAt: element.attributes.created_at,
-                            updatedAt: element.attributes.updated_at
+                            updatedAt: element.attributes.updated_at,
+                            likesCount: element.attributes.likes_count
                         }
                     })
                 })
