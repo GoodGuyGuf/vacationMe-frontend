@@ -73,4 +73,4 @@ class App extends React.Component{
   }
 }
 
-export default connect(state => ({posts: state.posts, users: state.users}), {fetchPosts, fetchUsers, fetchLikes, fetchComments, createPost, updatePost})(App);
+export default connect(state => ({posts: state.posts, users: state.users, likes: state.likes, comments: state.comments}), {fetchPosts, fetchUsers, fetchLikes, fetchComments, createPost, updatePost})(App);
