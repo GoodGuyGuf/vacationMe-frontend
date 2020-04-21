@@ -7,7 +7,7 @@ export default class Profile extends React.Component{
     render(){
         return(
             <div>
-                <NavBar/>
+                <NavBar persistor={this.props.persistor} />
                 <h1 id="userInfo">{this.props.currentUser().username}</h1>
                 <p id="userInfo">{this.props.currentUser().name}</p>
                 <p id="userInfo">{this.props.currentUser().email}</p>
