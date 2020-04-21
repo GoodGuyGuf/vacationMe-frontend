@@ -10,7 +10,7 @@ export default class Home extends React.Component{
             <div>
                 <NavBar />
                 <PostForm createPost={this.props.createPost}/>
-                <Post comments={this.props.comments} likes={this.props.likes} posts={this.props.posts} users={this.props.users} findUser={this.props.findUser}/>
+                <Post currentUser={this.props.currentUser} createComment= {this.props.createComment} comments={this.props.comments} likes={this.props.likes} posts={this.props.posts} users={this.props.users} findUser={this.props.findUser}/>
             </div>
         )
     }

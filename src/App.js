@@ -13,6 +13,7 @@ import { fetchLikes } from './actions/FetchLikes';
 import { fetchComments } from './actions/FetchComments';
 import { createPost } from './actions/CreatePost.js'
 import { updatePost } from './actions/UpdatePost.js'
+import { createComment } from './actions/CreateComment'
 import './css/App.css';
 
 class App extends React.Component{
@@ -58,7 +59,7 @@ class App extends React.Component{
 
             <Route exact path="/signup" component={Signup}/>
 
-            <Route exact path="/" render={routerProps => <Home {...routerProps} posts={this.props.posts} users={this.props.users} comments={this.props.comments} likes={this.props.likes} createPost={this.props.createPost} findUser={this.findUser}/>}/>
+            <Route exact path="/" render={routerProps => <Home {...routerProps} currentUser={this.currentUser} posts={this.props.posts} createComment={this.props.createComment} users={this.props.users} comments={this.props.comments} likes={this.props.likes} createPost={this.props.createPost} findUser={this.findUser}/>}/>
               {localStorage.getItem('loggedIn') === null ? <Redirect to="/login" /> : null}
 
             <Route exact path="/profile" render={routerProps => <Profile {...routerProps} posts={this.props.posts} currentUser={this.currentUser} />} />
@@ -73,4 +74,4 @@ class App extends React.Component{
   }
 }
 
-export default connect(state => ({posts: state.posts, users: state.users, likes: state.likes, comments: state.comments}), {fetchPosts, fetchUsers, fetchLikes, fetchComments, createPost, updatePost})(App);
+export default connect(state => ({posts: state.posts, users: state.users, likes: state.likes, comments: state.comments}), {fetchPosts, fetchUsers, fetchLikes, fetchComments, createPost, updatePost, createComment})(App);

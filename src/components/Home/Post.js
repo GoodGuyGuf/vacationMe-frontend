@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CommentForm from '../Comment/CommentForm';
 
 export default class Post extends React.Component{
 
@@ -27,6 +28,7 @@ export default class Post extends React.Component{
                         <h6>Likes: {post.likesCount}</h6>
                         <h5>Comments:</h5>
                         {this.renderComments(post)}
+                        <CommentForm currentUser={this.props.currentUser} postId={post.id} createComment={this.props.createComment}/>
                     </div>) 
                 })}
             </div>
