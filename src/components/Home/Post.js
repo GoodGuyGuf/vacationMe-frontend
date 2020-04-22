@@ -1,15 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Comment from '../Comment/Comment';
 import CommentForm from '../Comment/CommentForm';
 
 export default class Post extends React.Component{
-
-    renderComments = post => {
-        let comments = this.props.comments.filter(comment => comment.postId == post.id)
-        if (comments){
-            return comments.map(comment => <div id={"comment_" + comment.userId}><h4>{comment.user}</h4><p>{comment.description}</p></div>)
-        }
-    }
 
     render(){
         console.log(this.props.comments)
@@ -27,7 +21,7 @@ export default class Post extends React.Component{
                         <span>Updated at: {post.updatedAt}</span>
                         <h6>Likes: {post.likesCount}</h6>
                         <h5>Comments:</h5>
-                        {this.renderComments(post)}
+                        <Comment post={post} comments={this.props.comments}/>
                         <CommentForm currentUser={this.props.currentUser} postId={post.id} createComment={this.props.createComment}/>
                     </div>) 
                 })}
