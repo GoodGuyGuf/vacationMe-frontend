@@ -52,7 +52,7 @@ export default class CommentForm extends Component{
             <div>
                 <form onSubmit={this.handleOnSubmit}>
                 <p>Comment: </p>
-                    <textarea onChange={this.handleOnChange} type="text" name="description" value={this.state.description} /><br/>
+                    <textarea onChange={this.handleOnChange} id="commentform" type="text" name="description" value={this.state.description} /><br/>
                     <input type="submit" value="Submit"/>
                 </form>
             </div>
