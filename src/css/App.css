@@ -1,5 +1,5 @@
-#root{
-    background-color: rgb(245, 245, 245);
+html{
+    background-color: rgb(236, 236, 236);
 }
 
 #loginform{
@@ -22,6 +22,7 @@
     border: solid 1px;
     border-color: rgb(80, 80, 80);
     border-radius: 3px;
+    background-color: white;
     margin-top: 3%;
     padding: 2%;
     height: 30px;
@@ -112,7 +113,7 @@ div[id^="post_"]{
     width: 50%;
     border: solid 2px;
     border-color: black;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(245, 245, 245);
     padding: 2%;
     border-radius: 5px;
     font-weight: bold;
@@ -137,11 +138,13 @@ div[id^="comment_"]{
     padding: 1% 5% 1% 5%;
     border: solid 2px;
     border-color: black;
+    background-color: rgb(245, 245, 245);
     border-radius: 5px;
 }
 #PostForm input[type="text"]{
     border: solid 1px;
     border-color: rgb(80, 80, 80);
+    background-color: rgb(255, 255, 255);
     border-radius: 3px;
     margin-top: 3%;
     padding: 2%;
