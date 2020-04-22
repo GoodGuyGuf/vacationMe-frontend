@@ -6,15 +6,14 @@ import CommentForm from '../Comment/CommentForm';
 export default class Post extends React.Component{
 
     render(){
-        console.log(this.props.comments)
         return (
         <div id="posts">
             <div id="post-container">
-                {this.props.posts.reverse().map((post, index) => { 
+                {this.props.posts.map((post, index) => { 
                     return (<div key={index} id={'post_' + index}>
                     <h2>@{this.props.findUser(post.userId)}</h2>
                         <h3>Location: {post.location}</h3>
-                        <h5><Link key={index} to={`/posts/${post.id}`}>Title: {post.title}</Link></h5>
+                        <h4>Title: <Link key={index} to={`/posts/${post.id}`}>{post.title}</Link></h4>
                         <h3>Description: </h3>
                         <h4>{post.caption}</h4>
                         <span>Created at: {post.createdAt}</span><br/>
