@@ -54,19 +54,63 @@ class App extends React.Component{
       <div>
         <Router>
 
-            <Route exact path="/login" render={() => <div><div id="container"><h1 id="pre-logo">vacationMe</h1></div><Login/></div>} />
-              {localStorage.getItem('loggedIn') !== null ? <Redirect to="/" /> : null}
+            <Route exact path="/login" render={() => {return(
+              <div>
+                <div id="container">
+                  <h1 id="pre-logo">vacationMe</h1>
+                </div>
+                <Login/>
+              </div>)
+              }} 
+            />
+
+            {localStorage.getItem('loggedIn') !== null ? <Redirect to="/" /> : null}
 
             <Route exact path="/signup" component={Signup}/>
 
-            <Route exact path="/" render={routerProps => <Home {...routerProps} currentUser={this.currentUser} posts={this.props.posts} createComment={this.props.createComment} users={this.props.users} comments={this.props.comments} likes={this.props.likes} createPost={this.props.createPost} findUser={this.findUser}/>}/>
+            <Route exact path="/" 
+              render={routerProps => { 
+                return (
+                  <Home {...routerProps} 
+                  currentUser={this.currentUser} 
+                  posts={this.props.posts} 
+                  createComment={this.props.createComment} 
+                  users={this.props.users} 
+                  comments={this.props.comments} 
+                  likes={this.props.likes} 
+                  createPost={this.props.createPost} 
+                  findUser={this.findUser}/>
+                )
+              }}
+            />
               {localStorage.getItem('loggedIn') === null ? <Redirect to="/login" /> : null}
 
-            <Route exact path="/profile" render={routerProps => <Profile {...routerProps} posts={this.props.posts} currentUser={this.currentUser} />} />
+            <Route exact path="/profile" render={routerProps => {
+              return (
+                <Profile {...routerProps} 
+                posts={this.props.posts} 
+                currentUser={this.currentUser} />
+                )
+              }} 
+            />
 
-            <Route exact path="/posts/:id" render={routerProps => <PostShow {...routerProps} findPost={this.findPost} currentUser={this.currentUser} />}/>
+            <Route exact path="/posts/:id" render={routerProps => {
+              return(
+                <PostShow {...routerProps} 
+                findPost={this.findPost} 
+                currentUser={this.currentUser} />
+                )
+              }}
+            />
 
-            <Route exact path="/posts/:id/edit" render={routerProps => <PostEdit {...routerProps} posts={this.props.posts} updatePost={this.props.updatePost} />}/>
+            <Route exact path="/posts/:id/edit" render={routerProps => {
+              return(
+                <PostEdit {...routerProps} 
+                posts={this.props.posts} 
+                updatePost={this.props.updatePost} />
+                )
+              }}
+            />
 
         </Router>
       </div>
