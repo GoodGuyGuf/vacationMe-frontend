@@ -13,7 +13,8 @@ export function fetchComments(){
                             userId: element.attributes.user_id,
                             postId: element.attributes.post_id,
                             createdAt: element.attributes.created_at,
-                            updatedAt: element.attributes.updated_at
+                            updatedAt: element.attributes.updated_at,
+                            user: element.attributes.display_user
                         }
                     })
                 })

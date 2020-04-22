@@ -108,6 +108,15 @@ div[id^="post_"]{
     padding: 2%;
 }
 
+div[id^="comment_"]{
+    box-sizing: content-box;
+    width: 50%;
+    margin-top: 1%;
+    border: solid 2px;
+    border-color: black;
+    padding: 2%;
+}
+
 #PostForm{
     margin: 0 auto;
     margin-bottom: 1%;
