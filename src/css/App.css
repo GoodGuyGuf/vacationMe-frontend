@@ -167,6 +167,12 @@ div[id^="comment_"]{
     width: 700px;
 }
 
+#commentsubmit{
+    border: solid 1px;
+    border-color: rgb(80, 80, 80);
+    border-radius: 5px;
+}
+
 /* This is the end of the home page */
 
 #userInfo{
