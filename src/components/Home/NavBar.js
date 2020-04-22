@@ -11,7 +11,7 @@ class NavBar extends React.Component {
     render(){
         return (
             <div id="NavBar">
-                <h1><Link to="/" >Home</Link></h1>
+                <h1 id="homeLink"><Link to="/" >Home</Link></h1>
                 <h1 id="logo">vacationMe</h1>
                 <h1 id="profile"><Link to="/profile">Profile</Link></h1>
                 <h1 id="logout"><Link to="/login" onClick={this.logout}>Logout</Link></h1>
