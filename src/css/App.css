@@ -92,14 +92,13 @@
 
 #profile{
     display: inline-block;
-    position: absolute;
-    right: 13%;
+    position: static;
 }
 
 #logout{
     display: inline-block;
     position: absolute;
-    right: 4%;
+    right: 5%;
 }
 
 #homeLink{
