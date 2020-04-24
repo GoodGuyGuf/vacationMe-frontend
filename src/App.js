@@ -116,3 +116,16 @@ class App extends React.Component{
 }
 
 export default connect(state => ({posts: state.posts, users: state.users, likes: state.likes, comments: state.comments}), {fetchPosts, fetchUsers, fetchLikes, fetchComments, createPost, updatePost, createComment})(App);
+
+/*
+  1. App should not be responsible for everything in state nor every dispatch function. Each container component should be responsible
+  For their own logic and state. Passing props like this makes it more difficult to organize and see what exactly is happening
+  if something goes wrong.
+  2. App should also define a posts route that has all posts
+  3. RESTful routing should be simple.
+    1. index page for posts
+    2. Show page for posts ✅
+    3. Edit show page for posts ✅
+    4. We don't have a new route because making a new post just happens on the front page. ✅
+    5. I think this is as restful as I want to make it. The only thing left is an index page for posts and even then I might not want it. ✅
+*/

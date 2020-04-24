@@ -29,3 +29,11 @@ export default class Post extends React.Component{
         )
     }
 }
+
+/*  1. Posts.js should be a container component responsible for rendering a Post component for each post
+    and it should be responsible for rendering the comments component & the comment form component.
+    2. Post should send down props to comment component since comment component should be a functional stateless component.
+    3. Post should pass down props to commentForm for the current user, the post id and the createComment Dispatcher.
+    4. Posts should be the component that defines the dynamic routes that are defined in App.js.
+    5. To show most recent posts, you have to create a variable, slice state and then reverse the array so that you don't mutate state.
+*/

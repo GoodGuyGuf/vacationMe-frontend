@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { compose } from 'redux';
 
 class PostForm extends React.Component{
 

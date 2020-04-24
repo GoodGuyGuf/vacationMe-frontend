@@ -15,3 +15,13 @@ export default class Home extends React.Component{
         )
     }
 }
+
+/* 
+Home should be responsible for rendering the navbar component, the PostForm component and the posts component. Posts will
+Then be in charge of rendering the post, the comments and the comment form.
+
+1. NavBar is okay
+2. PostForm should not have to accept props like this. Home should pass down the createPost, not App.js.
+3. Posts should be responsible for sending its own props by connecting to redux in the Posts component.
+4. Home should not render all posts. Once user reaches bottom of the page, they should be able to then render more posts.
+*/
