@@ -36,4 +36,5 @@ export default class Post extends React.Component{
     3. Post should pass down props to commentForm for the current user, the post id and the createComment Dispatcher.
     4. Posts should be the component that defines the dynamic routes that are defined in App.js.
     5. To show most recent posts, you have to create a variable, slice state and then reverse the array so that you don't mutate state.
+    6. Post.js Should have defaultProps.
 */

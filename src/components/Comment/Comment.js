@@ -15,3 +15,5 @@ export default class Comment extends Component {
         )
     }
 }
+
+// Comment.js should have defaultProps
