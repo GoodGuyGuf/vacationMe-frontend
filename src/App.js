@@ -127,5 +127,6 @@ export default connect(state => ({posts: state.posts, users: state.users, likes:
     2. Show page for posts ✅
     3. Edit show page for posts ✅
     4. We don't have a new route because making a new post just happens on the front page. ✅
-    5. I think this is as restful as I want to make it. The only thing left is an index page for posts and even then I might not want it. ✅
+    5. Should have a show page instead of a '/profile' route. It should be '/users/1'
+    6. I think this is as restful as I want to make it. The only thing left is an index page for posts and even then I might not want it. ✅
 */
