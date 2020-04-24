@@ -1,7 +1,7 @@
 import React from 'react';
 import Login from './components/login/Login.js';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import Signup from './components/Signup/Signup';
 import Home from './components/Home/Home.js';
 import Profile from './components/Profile/Profile.js';
@@ -52,8 +52,6 @@ class App extends React.Component{
   render(){
     return (
       <div>
-        <Router>
-
             <Route exact path="/login" render={() => {return(
               <div>
                 <div id="container">
@@ -112,7 +110,6 @@ class App extends React.Component{
               }}
             />
 
-        </Router>
       </div>
     );
   }
