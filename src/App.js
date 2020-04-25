@@ -115,7 +115,7 @@ class App extends React.Component{
   }
 }
 
-export default connect(state => ({posts: state.posts, users: state.users, likes: state.likes, comments: state.comments}), {fetchPosts, fetchUsers, fetchLikes, fetchComments, createPost, updatePost, createComment})(App);
+export default connect(state => ({posts: state.posts, users: state.users, currentUser: state.currentUser, likes: state.likes, comments: state.comments}), {fetchPosts, fetchUsers, fetchLikes, fetchComments, createPost, updatePost, createComment})(App);
 
 /*
   1. App should not be responsible for everything in state nor every dispatch function. Each container component should be responsible

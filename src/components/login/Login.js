@@ -1,5 +1,8 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { loginUser } from '../../actions/LoginUser'
 
 class Login extends React.Component{
 
@@ -29,9 +32,11 @@ class Login extends React.Component{
         fetch("http://localhost:3000/login", user)
         .then(response => response.json())
         .then(json => {
+            console.log(json.data)
             if (json.message === "No User Found."){
                 alert("Incorrect Login")
             } else {
+                this.props.loginUser(json.data)
                 const userData = {
                     id: json.data.id,
                     name: json.data.attributes.name, 
@@ -72,4 +77,4 @@ class Login extends React.Component{
     }
 }
 
-export default withRouter(Login);
+export default compose(withRouter, connect(null, { loginUser }))(Login)
