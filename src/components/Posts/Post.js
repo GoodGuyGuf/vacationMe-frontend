@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 export default class Post extends Component {
     render(){
         return (
-            <div key={this.props.index} id={'post_' + this.props.index}>
+            <>
                 <h2>@{this.props.user}</h2>
                 <h3>Location: {this.props.post.location}</h3>
                 <h4>Title: <Link key={this.props.index} to={`/posts/${this.props.post.id}`}>{this.props.post.title}</Link></h4>
@@ -20,7 +20,7 @@ export default class Post extends Component {
                 <h5>Comments:</h5>
                 <Comment post={this.props.post} comments={this.props.comments}/>
                 <CommentForm currentUser={this.props.currentUser} postId={this.props.post.id} createComment={this.props.createComment}/>
-            </div>
+            </>
         )
     }
 }

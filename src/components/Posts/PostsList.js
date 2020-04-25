@@ -17,20 +17,19 @@ class Posts extends React.Component{
     render(){
         return (
         <div id="posts">
-            <div id="post-container">
                 {this.props.posts.map((post, index) => { 
                     return (
-                        <>
+                        <div key={index} id={'post_' + this.props.index}>
                         <Post 
                         currentUser={this.props.currentUser}
                         user={this.findUser(post.userId)} 
-                        post={post} index={index} 
+                        post={post} 
+                        index={index} 
                         comments={this.props.comments}
                         createComment={this.props.createComment}
                         />
-                    </>) 
+                    </div>) 
                 })}
-            </div>
         </div>
         )
     }

@@ -7,15 +7,7 @@ export function fetchComments(){
                 json.data.forEach(element => {
                     dispatch({
                         type: "ADD_COMMENT", 
-                        comment: {
-                            id: element.id, 
-                            description: element.attributes.description,
-                            userId: element.attributes.user_id,
-                            postId: element.attributes.post_id,
-                            createdAt: element.attributes.created_at,
-                            updatedAt: element.attributes.updated_at,
-                            user: element.attributes.display_user
-                        }
+                        comment: {id: element.id,  ...element.attributes}
                     })
                 })
             });

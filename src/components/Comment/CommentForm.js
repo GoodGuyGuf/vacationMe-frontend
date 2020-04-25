@@ -34,22 +34,14 @@ export default class CommentForm extends Component{
             if (json.message === "Unable to save."){
                 alert("Unable to save.")
             } else {
-                const commentData = {
-                    id: json.data.id,
-                    description: json.data.attributes.description, 
-                    userId: json.data.attributes.user_id, 
-                    PostId: json.data.attributes.post_id,
-                    createdAt: json.data.attributes.created_at,
-                    updatedAt: json.data.attributes.updated_at
-                }
-                this.props.createComment(commentData)
+                this.props.createComment(json.data)
             }
         })
     }
 
     render(){
         return (
-            <div>
+            <div id="CommentForm">
                 <form onSubmit={this.handleOnSubmit}>
                 <p>Comment: </p>
                     <textarea onChange={this.handleOnChange} id="commentform" type="text" name="description" value={this.state.description} /><br/>
