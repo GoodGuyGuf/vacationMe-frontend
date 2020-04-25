@@ -16,19 +16,10 @@ import './css/App.css';
 
 class App extends React.Component{
 
-  currentUser = () => {
-    const currentUser = JSON.parse(localStorage.getItem("loggedIn")).userData
-    return currentUser
-  }
-
-  findUser = searchedUser => {
-    const user = this.props.users.find(user => user.id == searchedUser)
-    if (user){
-        return user.username
-    } else {
-        return null
-    }
-  }
+  // currentUser = () => {
+  //   const currentUser = JSON.parse(localStorage.getItem("loggedIn")).userData
+  //   return currentUser
+  // }
 
   findPost = postId => {
     const post = this.props.posts.find(post => post.id == postId)
@@ -60,7 +51,7 @@ class App extends React.Component{
               }} 
             />
 
-            {localStorage.getItem('loggedIn') !== null ? <Redirect to="/" /> : null}
+            {/* {localStorage.getItem('loggedIn') !== null ? <Redirect to="/" /> : null} */}
 
             <Route exact path="/signup" component={Signup}/>
 
@@ -74,18 +65,19 @@ class App extends React.Component{
                   users={this.props.users} 
                   comments={this.props.comments} 
                   likes={this.props.likes} 
-                  createPost={this.props.createPost} 
-                  findUser={this.findUser}/>
+                  createPost={this.props.createPost} />
                 )
               }}
             />
-              {localStorage.getItem('loggedIn') === null ? <Redirect to="/login" /> : null}
+              {/* {localStorage.getItem('loggedIn') === null ? <Redirect to="/login" /> : null} */}
 
             <Route exact path="/profile" render={routerProps => {
               return (
                 <Profile {...routerProps} 
                 posts={this.props.posts} 
-                currentUser={this.currentUser} />
+                // currentUser={this.currentUser} 
+
+                />
                 )
               }} 
             />
@@ -94,7 +86,9 @@ class App extends React.Component{
               return(
                 <PostShow {...routerProps} 
                 findPost={this.findPost} 
-                currentUser={this.currentUser} />
+                // currentUser={this.currentUser} 
+
+                />
                 )
               }}
             />
