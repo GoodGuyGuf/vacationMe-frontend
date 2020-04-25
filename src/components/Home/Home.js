@@ -7,11 +7,11 @@ export default class Home extends React.Component{
 
     render(){
         return(
-            <div>
+            <>
                 <NavBar />
                 <PostForm createPost={this.props.createPost}/>
                 <PostsList createComment={this.props.createComment}/>
-            </div>
+            </>
         )
     }
 }
