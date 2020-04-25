@@ -11,9 +11,7 @@ import { fetchPosts } from './actions/FetchPosts';
 import { fetchUsers } from './actions/FetchUsers';
 import { fetchLikes } from './actions/FetchLikes';
 import { fetchComments } from './actions/FetchComments';
-import { createPost } from './actions/CreatePost.js'
-import { updatePost } from './actions/UpdatePost.js'
-import { createComment } from './actions/CreateComment'
+import { createPost, updatePost, createComment } from './actions/Actions';
 import './css/App.css';
 
 class App extends React.Component{

@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { deletePost } from '../../actions/DeletePost'
+import { deletePost } from '../../actions/Actions';
 
 class UserPosts extends React.Component{
 

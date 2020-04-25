@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { loginUser } from '../../actions/LoginUser'
+import { loginUser } from '../../actions/Actions';
 
 class Login extends React.Component{
 
