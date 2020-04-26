@@ -59,12 +59,7 @@ class App extends React.Component{
               render={routerProps => { 
                 return (
                   <Home {...routerProps} 
-                  currentUser={this.currentUser} 
-                  posts={this.props.posts} 
                   createComment={this.props.createComment} 
-                  users={this.props.users} 
-                  comments={this.props.comments} 
-                  likes={this.props.likes} 
                   createPost={this.props.createPost} />
                 )
               }}
@@ -107,7 +102,19 @@ class App extends React.Component{
   }
 }
 
-export default connect(state => ({posts: state.posts, users: state.users, currentUser: state.currentUser, likes: state.likes, comments: state.comments}), {fetchPosts, fetchUsers, fetchLikes, fetchComments, createPost})(App);
+export default connect(state => ({
+  posts: state.posts, 
+  users: state.users, 
+  currentUser: state.currentUser, 
+  likes: state.likes, 
+  comments: state.comments
+}), {
+  fetchPosts, 
+  fetchUsers, 
+  fetchLikes, 
+  fetchComments, 
+  createPost
+})(App);
 
 /*
   1. App should not be responsible for everything in state nor every dispatch function. Each container component should be responsible
