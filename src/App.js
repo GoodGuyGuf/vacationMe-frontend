@@ -16,11 +16,6 @@ import './css/App.css';
 
 class App extends React.Component{
 
-  // currentUser = () => {
-  //   const currentUser = JSON.parse(localStorage.getItem("loggedIn")).userData
-  //   return currentUser
-  // }
-
   findPost = postId => {
     const post = this.props.posts.find(post => post.id == postId)
     const user = this.props.users.find(user => user.id == post.userId)
