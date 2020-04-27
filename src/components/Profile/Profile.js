@@ -1,19 +1,63 @@
 import React from 'react';
 import NavBar from '../Home/NavBar';
 import UserPosts from './UserPosts';
-// this component is rendering more than once after each link click. Needs fix.
-export default class Profile extends React.Component{
+import { connect } from 'react-redux';
+import { deletePost } from '../../actions/Actions';
+import { compose } from 'redux';
+import { withRouter } from 'react-router-dom';
+
+class Profile extends React.Component{
+
+    findPosts = user => {
+        const posts = this.props.posts.filter(post => post.userId == user)
+        if (posts){
+            return posts
+        } else {
+            return null
+        }
+    }
+
+    deleter = post => {
+        const postMarkedForDeletion = {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(post.id)
+        }
+
+        fetch(`http://localhost:3000/posts/${post.id}`, postMarkedForDeletion)
+        .then(response => response.json())
+        .then(json => {
+            if (json.message === "Unable to delete"){
+                alert("Unable to Delete.")
+            } else {
+                console.log(json)
+                this.props.deletePost(post)
+                this.props.history.push("/profile")
+            }
+        })
+    }
 
     render(){
         return(
             <div>
-                <NavBar persistor={this.props.persistor} />
+                <NavBar />
                 <h1 id="userInfo">{this.props.currentUser().username}</h1>
                 <p id="userInfo">{this.props.currentUser().name}</p>
                 <p id="userInfo">{this.props.currentUser().email}</p>
                 <h5 id="userposts">Posts:</h5>
-                <UserPosts posts={this.props.posts}/>
+                <UserPosts 
+                    currentUser={this.props.currentUser}
+                    deletePost={this.props.deletePost} 
+                    posts={this.props.posts}
+                    deleter={this.deleter}
+                    findPosts={this.findPosts}
+                 />
             </div>
         )
     }
 }
+
+export default compose(withRouter, connect(state => ({currentUser: state.currentUser}), { deletePost }))(Profile)

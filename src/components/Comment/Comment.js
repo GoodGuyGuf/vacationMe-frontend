@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 export default class Comment extends Component {
 
     filterComments = post => {
-        console.log(this.props.comments)
         let comments = this.props.comments.filter(comment => comment.post_id == post.id)
         if (comments){
             return comments.map((comment, index) => {

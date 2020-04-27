@@ -50,27 +50,10 @@ class App extends React.Component{
 
             <Route exact path="/signup" component={Signup}/>
 
-            <Route exact path="/" 
-              render={routerProps => { 
-                return (
-                  <Home {...routerProps} 
-                  createComment={this.props.createComment} 
-                  createPost={this.props.createPost} />
-                )
-              }}
-            />
+            <Route exact path="/" render={routerProps => <Home {...routerProps} createPost={this.props.createPost}  />}/>
               {/* {localStorage.getItem('loggedIn') === null ? <Redirect to="/login" /> : null} */}
 
-            <Route exact path="/profile" render={routerProps => {
-              return (
-                <Profile {...routerProps} 
-                posts={this.props.posts} 
-                // currentUser={this.currentUser} 
-
-                />
-                )
-              }} 
-            />
+            <Route exact path="/profile" render={() => <Profile posts={this.props.posts} />}/>
 
             <Route exact path="/posts/:id" render={routerProps => {
               return(
