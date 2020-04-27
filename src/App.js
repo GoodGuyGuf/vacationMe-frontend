@@ -53,7 +53,7 @@ class App extends React.Component{
             <Route exact path="/" render={routerProps => <Home {...routerProps} createPost={this.props.createPost}  />}/>
               {/* {localStorage.getItem('loggedIn') === null ? <Redirect to="/login" /> : null} */}
 
-            <Route exact path="/profile" render={() => <Profile posts={this.props.posts} />}/>
+            <Route exact path="/profile" component={Profile}/>
 
             <Route exact path="/posts/:id" render={routerProps => {
               return(

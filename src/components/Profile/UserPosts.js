@@ -1,10 +1,10 @@
 import React from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-class UserPosts extends React.Component{
+export default class UserPosts extends React.Component{
 
     renderPosts = () => {
-        {this.props.findPosts(this.props.currentUser.id).reverse().map((post, index) => {
+        return this.props.findPosts(this.props.currentUser.id).map((post, index) => {
             return (
                 <div key={index} id="UserPost">
                     <h4>{post.title}</h4>
@@ -14,18 +14,15 @@ class UserPosts extends React.Component{
                     <span>Updated at: {post.updatedAt}</span><br />
                     <button onClick={() => {this.props.deleter(post)}}>Delete</button>
                 </div>
-                )
-            })
-        }
+                    )
+                })
     }
 
     render(){
         return(
-            <>
+            <div>
             {this.renderPosts()}
-            </>
+            </div>
         )
     }
 }
-
-export default withRouter(UserPosts)

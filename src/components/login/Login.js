@@ -32,7 +32,6 @@ class Login extends React.Component{
         fetch("http://localhost:3000/login", user)
         .then(response => response.json())
         .then(json => {
-            console.log(json.data)
             if (json.message === "No User Found."){
                 alert("Incorrect Login")
             } else {
