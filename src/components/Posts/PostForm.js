@@ -11,11 +11,9 @@ class PostForm extends React.Component{
     }
 
     handleOnChange = event => {
-        const currentUser = JSON.parse(localStorage.getItem("loggedIn")).userData
-
         this.setState({
             [event.target.name]: event.target.value,
-            user_id: currentUser.id
+            user_id: parseInt(this.props.currentUser.id)
         })
     }
 

@@ -6,7 +6,7 @@ export default class PostShow extends React.Component {
 
     render(){
         let edit;
-        if (this.props.findPost(this.props.match.params.id).user.id === this.props.currentUser().id){
+        if (this.props.findPost(this.props.match.params.id).user.id === parseInt(this.props.currentUser.id)){
             edit = (<Link to={"/posts/" + this.props.match.params.id + '/edit'}>Edit Post</Link>)
         }
         return (

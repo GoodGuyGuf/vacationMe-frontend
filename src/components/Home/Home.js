@@ -9,7 +9,7 @@ export default class Home extends React.Component{
         return(
             <>
                 <NavBar />
-                <PostForm createPost={this.props.createPost}/>
+                <PostForm createPost={this.props.createPost} currentUser={this.props.currentUser}/>
                 <PostsList />
             </>
         )

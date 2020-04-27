@@ -50,7 +50,7 @@ class App extends React.Component{
 
             <Route exact path="/signup" component={Signup}/>
 
-            <Route exact path="/" render={routerProps => <Home {...routerProps} createPost={this.props.createPost}  />}/>
+            <Route exact path="/" render={routerProps => <Home {...routerProps} createPost={this.props.createPost} currentUser={this.props.currentUser} />}/>
               {/* {localStorage.getItem('loggedIn') === null ? <Redirect to="/login" /> : null} */}
 
             <Route exact path="/profile" component={Profile}/>
@@ -59,7 +59,7 @@ class App extends React.Component{
               return(
                 <PostShow {...routerProps} 
                 findPost={this.findPost} 
-                // currentUser={this.currentUser} 
+                currentUser={this.props.currentUser} 
 
                 />
                 )
