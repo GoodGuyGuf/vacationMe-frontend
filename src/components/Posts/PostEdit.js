@@ -16,24 +16,22 @@ class PostEdit extends React.Component{
 
     componentDidMount(){
         const post = this.props.posts.find(post => post.id === this.props.match.params.id)
-        const currentUser = JSON.parse(localStorage.getItem("loggedIn")).userData
         this.setState({
             id: this.props.match.params.id,
             title: post.title,
             location: post.location,
             caption: post.caption,
-            user_id: currentUser.id,
+            user_id: parseInt(this.props.currentUser.id),
             createdAt: post.created_at,
             updatedAt: post.updated_at
         })
     }
 
     handleOnChange = event => {
-        const currentUser = JSON.parse(localStorage.getItem("loggedIn")).userData
         this.setState({
             id: this.props.match.params.id,
             [event.target.name]: event.target.value,
-            user_id: currentUser.id
+            user_id: parseInt(this.props.currentUser.id)
         })
     }
 

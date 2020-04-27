@@ -11,6 +11,7 @@ import { fetchPosts } from './actions/FetchPosts';
 import { fetchUsers } from './actions/FetchUsers';
 import { fetchLikes } from './actions/FetchLikes';
 import { fetchComments } from './actions/FetchComments';
+import { updatePost } from './actions/Actions'
 import { createPost } from './actions/Actions';
 import './css/App.css';
 
@@ -70,7 +71,8 @@ class App extends React.Component{
               return(
                 <PostEdit {...routerProps} 
                 posts={this.props.posts} 
-                updatePost={this.props.updatePost} />
+                updatePost={this.props.updatePost}
+                currentUser={this.props.currentUser}  />
                 )
               }}
             />
@@ -91,7 +93,8 @@ export default connect(state => ({
   fetchUsers, 
   fetchLikes, 
   fetchComments, 
-  createPost
+  createPost,
+  updatePost
 })(App);
 
 /*
