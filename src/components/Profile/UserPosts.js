@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import { Link } from 'react-router-dom';
 
 export default class UserPosts extends React.Component{
@@ -10,8 +11,8 @@ export default class UserPosts extends React.Component{
                     <h4>{post.title}</h4>
                     <p>{post.caption}</p>
                     <h4><Link key={index} to={`/posts/${post.id}/edit`}>Edit</Link></h4>
-                    <span>Created at: {post.createdAt}</span><br/>
-                    <span>Updated at: {post.updatedAt}</span><br />
+                    <span>Created at: {moment(post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span><br/>
+                    <span>Updated at: {moment(post.updatedAt).format('MMMM Do YYYY, h:mm:ss a')}</span><br />
                     <button onClick={() => {this.props.deleter(post)}}>Delete</button>
                 </div>
                     )
