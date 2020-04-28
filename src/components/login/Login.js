@@ -52,7 +52,15 @@ class Login extends Component{
             if (json.message === "No User Found."){
                 alert("Incorrect Login")
             } else {
-                this.props.loginUser(json.data)
+                const userData = {
+                        id: json.data.id,
+                        name: json.data.attributes.name, 
+                        username: json.data.attributes.username, 
+                        email: json.data.attributes.email,
+                        createdAt: json.data.attributes.created_at,
+                        updatedAt: json.data.attributes.updated_at
+                    }
+                this.props.loginUser(userData)
                 this.props.history.push("/");
             }
         })
