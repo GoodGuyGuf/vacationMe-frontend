@@ -1,9 +1,9 @@
 import React from 'react';
 import Login from './components/login/Login.js';
 import { connect } from 'react-redux';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import Signup from './components/Signup/Signup';
-import Home from './components/NavBar/Home.js.js';
+import Home from './Containers/Home';
 import Profile from './Containers/Profile.js';
 import PostShow from './components/Posts/PostShow';
 import PostEdit from './components/Posts/PostEdit';
@@ -38,12 +38,11 @@ class App extends React.Component{
               }} 
             />
 
-            {/* {localStorage.getItem('loggedIn') !== null ? <Redirect to="/" /> : null} */}
+            {this.props.currentUser ? <Redirect to="/" /> : <Redirect to="/login" />}
 
             <Route exact path="/signup" component={Signup}/>
 
             <Route exact path="/" component={Home}/>
-              {/* {localStorage.getItem('loggedIn') === null ? <Redirect to="/login" /> : null} */}
 
             <Route exact path="/profile" component={Profile}/>
 

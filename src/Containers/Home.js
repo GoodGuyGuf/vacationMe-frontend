@@ -1,8 +1,8 @@
 import React from 'react';
-import NavBar from './NavBar';
-import PostForm from '../Posts/PostForm';
-import PostsList from '../Posts/PostsList';
-import { createPost, updatePost, createComment } from '../../actions/Actions';
+import NavBar from '../components/NavBar/NavBar';
+import PostForm from '../components/Posts/PostForm';
+import PostsList from '../components/Posts/PostsList';
+import { createPost, updatePost, createComment } from '../actions/Actions';
 import { connect } from 'react-redux';
 
 class Home extends React.Component{
