@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import Comment from '../Comment/Comment';
 import CommentForm from '../Comment/CommentForm';
+import Like from '../Like/LikeButton'
 import { Link } from 'react-router-dom';
 
 export default class Post extends Component {
@@ -17,6 +18,7 @@ export default class Post extends Component {
                 <span>Updated at: {moment(this.props.post.updatedAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
                 
                 <h6>Likes: {this.props.post.likesCount}</h6>
+                <Like />
                 <h5>Comments:</h5>
                 <Comment post={this.props.post} comments={this.props.comments}/>
                 <CommentForm currentUser={this.props.currentUser} postId={this.props.post.id} createComment={this.props.createComment}/>

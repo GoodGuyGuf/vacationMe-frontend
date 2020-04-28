@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
-class LikeButton extends Component{
+export default class LikeButton extends Component{
     render(){
+        return (
         <div>
             <button>Like</button>
         </div>
+        )
     }
 }
