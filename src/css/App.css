@@ -104,6 +104,12 @@ html{
     left: 44.3%;
 }
 
+#destinationFilter{
+    display: inline-block;
+    position: absolute;
+    left: 18.5%;
+}
+
 #profile{
     display: inline-block;
     position: static;
