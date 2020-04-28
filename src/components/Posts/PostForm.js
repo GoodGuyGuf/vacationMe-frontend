@@ -1,7 +1,6 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
-class PostForm extends React.Component{
+export default class PostForm extends React.Component{
 
     state = {
         title: "",
@@ -62,5 +61,3 @@ class PostForm extends React.Component{
         )
     }
 }
-
-export default withRouter(PostForm)
