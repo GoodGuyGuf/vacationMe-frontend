@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../Home/NavBar';
+import NavBar from '../NavBar/NavBar';
 import { Link } from 'react-router-dom';
 
 export default class PostShow extends React.Component {

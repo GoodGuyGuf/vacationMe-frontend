@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DestinationForm from '../Destinations/DestinationForm';
-import NavBar from '../components/Home/NavBar';
+import NavBar from '../components/NavBar/NavBar';
 import {createComment} from '../actions/Actions'
 
 class DestinationContainer extends Component{

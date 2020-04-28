@@ -1,10 +1,10 @@
 import React from 'react';
 import Login from './components/login/Login.js';
 import { connect } from 'react-redux';
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Signup from './components/Signup/Signup';
-import Home from './components/Home/Home.js';
-import Profile from './components/Profile/Profile.js';
+import Home from './components/NavBar/Home.js.js';
+import Profile from './Containers/Profile.js';
 import PostShow from './components/Posts/PostShow';
 import PostEdit from './components/Posts/PostEdit';
 import DestinationContainer from './Containers/DestinationContainer'
@@ -74,11 +74,8 @@ class App extends React.Component{
 }
 
 export default connect(state => ({
-  posts: state.posts, 
-  users: state.users, 
-  currentUser: state.currentUser, 
-  likes: state.likes, 
-  comments: state.comments
+  posts: state.posts,  
+  currentUser: state.currentUser
 }), {
   fetchPosts, 
   fetchUsers, 

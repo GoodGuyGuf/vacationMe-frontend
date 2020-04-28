@@ -1,8 +1,8 @@
 import React from 'react';
-import NavBar from '../Home/NavBar';
-import UserPosts from './UserPosts';
+import NavBar from '../components/NavBar/NavBar';
+import UserPosts from '../components/Profile/UserPosts';
 import { connect } from 'react-redux';
-import { deletePost } from '../../actions/Actions';
+import { deletePost } from '../actions/Actions';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
 

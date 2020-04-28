@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../Home/NavBar';
+import NavBar from '../NavBar/NavBar';
 import { withRouter } from 'react-router-dom';
 
 class PostEdit extends React.Component{
