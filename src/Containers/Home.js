@@ -7,6 +7,9 @@ import { connect } from 'react-redux';
 
 class Home extends React.Component{
 
+    /* Home component acts as a container for the NavBar, PostForm & PostsList components. It currently passes down props to each
+    component. The child components could have connected to redux, but each one also renders within one another. Currently since this
+    is the container or parent component, it feels better to pass down props from here. */
     render(){
         return(
             <>
