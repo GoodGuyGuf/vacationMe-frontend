@@ -44,9 +44,9 @@ class Profile extends React.Component{
         return(
             <div>
                 <NavBar />
-                <h1 id="userInfo">{this.props.currentUser.attributes.username}</h1>
-                <p id="userInfo">{this.props.currentUser.attributes.name}</p>
-                <p id="userInfo">{this.props.currentUser.attributes.email}</p>
+                <h1 id="userInfo">{this.props.currentUser.username}</h1>
+                <p id="userInfo">{this.props.currentUser.name}</p>
+                <p id="userInfo">{this.props.currentUser.email}</p>
                 <h5 id="userposts">Posts:</h5>
                 <UserPosts 
                     currentUser={this.props.currentUser}
