@@ -1,9 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Post from './Post';
-import { createPost, updatePost, createComment } from '../../actions/Actions';
 
-class Posts extends React.Component{
+export default class Posts extends React.Component{
 
     findUser = searchedUser => {
         const user = this.props.users.find(user => user.id == searchedUser)
@@ -20,7 +18,7 @@ class Posts extends React.Component{
         <div id="posts">
                 {recentPosts.reverse().map((post, index) => { 
                     return (
-                        <div key={index} id={'post_' + this.props.index}>
+                        <div key={index} id={'post_' + post.id}>
                         <Post 
                         currentUser={this.props.currentUser}
                         user={this.findUser(post.userId)} 
@@ -35,13 +33,6 @@ class Posts extends React.Component{
         )
     }
 }
-
-export default connect(state => ({
-    posts: state.posts, 
-    users: state.users, 
-    comments: state.comments, 
-    currentUser: state.currentUser
-}), {createPost, updatePost, createComment})(Posts)
 
 /*  1. Posts.js should be a container component responsible for rendering a Post component for each post
     and it should be responsible for rendering the comments component & the comment form component.

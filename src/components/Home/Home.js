@@ -2,19 +2,34 @@ import React from 'react';
 import NavBar from './NavBar';
 import PostForm from '../Posts/PostForm';
 import PostsList from '../Posts/PostsList';
+import { createPost, updatePost, createComment } from '../../actions/Actions';
+import { connect } from 'react-redux';
 
-export default class Home extends React.Component{
+class Home extends React.Component{
 
     render(){
         return(
             <>
                 <NavBar />
                 <PostForm createPost={this.props.createPost} currentUser={this.props.currentUser}/>
-                <PostsList />
+                <PostsList
+                    posts={this.props.posts}
+                    users={this.props.users}
+                    currentUser={this.props.currentUser}
+                    comments={this.props.comments}
+                    createComment={this.props.createComment}
+                 />
             </>
         )
     }
 }
+
+export default connect(state => ({
+    posts: state.posts, 
+    users: state.users, 
+    comments: state.comments, 
+    currentUser: state.currentUser
+}), {createPost, updatePost, createComment})(Home)
 
 /* 
 Home should be responsible for rendering the navbar component, the PostForm component and the posts component. Posts will
