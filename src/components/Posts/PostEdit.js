@@ -63,7 +63,7 @@ class PostEdit extends React.Component{
                     updatedAt: json.data.attributes.updated_at
                 }
                 this.props.updatePost(postData)
-                this.props.history.push(`/posts/${postData.id}`)
+                this.props.history.push('/profile')
             }
         })
     }
