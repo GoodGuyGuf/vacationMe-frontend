@@ -26,7 +26,6 @@ class App extends Component{ // We can also write this as class App extends Reac
   }
 
   render(){ // render is the only function that is required for a React Component to work properly. 
-    console.log(this.props.currentUser)
     return ( // In this Component we are defining our routes.
       <div>
       {/* immediately when you start the React Router with npm start, it will always load the default URL at localhost:3000/ */}

@@ -36,7 +36,7 @@ class Signup extends React.Component{
             if (json.message === "Incorrect fields"){
                 alert("Incorrect Login")
             } else {
-                loginUser(json.data)
+                this.props.loginUser(json.data)
                 this.props.history.push("/");
             }
         })
