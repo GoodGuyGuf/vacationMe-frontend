@@ -15,9 +15,10 @@ class Posts extends React.Component{
       }
 
     render(){
+        const recentPosts = this.props.posts
         return (
         <div id="posts">
-                {this.props.posts.map((post, index) => { 
+                {recentPosts.reverse().map((post, index) => { 
                     return (
                         <div key={index} id={'post_' + this.props.index}>
                         <Post 
