@@ -1,5 +1,8 @@
 import React from 'react';
+import { compose } from 'redux';
 import { withRouter, Link } from 'react-router-dom';
+import { loginUser } from '../../actions/Actions';
+import { connect } from 'react-redux';
 
 class Signup extends React.Component{
 
@@ -33,16 +36,7 @@ class Signup extends React.Component{
             if (json.message === "Incorrect fields"){
                 alert("Incorrect Login")
             } else {
-                console.log(json.data)
-                const userData = {
-                    id: json.data.id,
-                    name: json.data.attributes.name, 
-                    username: json.data.attributes.username, 
-                    email: json.data.attributes.email,
-                    createdAt: json.data.attributes.created_at,
-                    updatedAt: json.data.attributes.updated_at
-                }
-                localStorage.setItem('loggedIn', JSON.stringify({userData}))
+                loginUser(json.data)
                 this.props.history.push("/");
             }
         })
@@ -70,4 +64,4 @@ class Signup extends React.Component{
 
 }
 
-export default withRouter(Signup);
+export default compose(withRouter, connect(null, { loginUser }))(Signup)

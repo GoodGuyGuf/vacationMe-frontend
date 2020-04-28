@@ -2,7 +2,7 @@ import React from 'react';
 import NavBar from '../components/NavBar/NavBar';
 import PostForm from '../components/Posts/PostForm';
 import PostsList from '../components/Posts/PostsList';
-import { createPost, updatePost, createComment } from '../actions/Actions';
+import { createPost, updatePost, createComment, logoutUser } from '../actions/Actions';
 import { connect } from 'react-redux';
 
 class Home extends React.Component{
@@ -10,7 +10,7 @@ class Home extends React.Component{
     render(){
         return(
             <>
-                <NavBar />
+                <NavBar logoutUser={this.props.logoutUser}/>
 
                 <PostForm 
                     createPost={this.props.createPost} 
@@ -34,4 +34,4 @@ export default connect(state => ({
     users: state.users, 
     comments: state.comments, 
     currentUser: state.currentUser
-}), {createPost, updatePost, createComment})(Home)
+}), {createPost, updatePost, createComment, logoutUser})(Home)
