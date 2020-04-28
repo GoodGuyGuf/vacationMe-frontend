@@ -44,6 +44,7 @@ class Signup extends React.Component{
                     createdAt: json.data.attributes.created_at,
                     updatedAt: json.data.attributes.updated_at
                 }
+                console.log(`This is Signup userData.username: ${userData.username}, user.id: ${userData.id}`)
                 this.props.loginUser(userData)
                 this.props.history.push("/");
             }

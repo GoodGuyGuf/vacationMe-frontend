@@ -14,7 +14,7 @@ export default class Post extends Component {
 
     render(){
         let edit;
-        if (this.props.post.id === this.props.currentUser.id){
+        if (this.props.post.userId == this.props.currentUser.id){
             edit = <h4><Link to={`/posts/${this.props.post.id}/edit`}>Edit Post</Link></h4>
         }
         return (
@@ -28,7 +28,7 @@ export default class Post extends Component {
                 <span>Updated at: {moment(this.props.post.updatedAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
                 {edit}
                 <h6>Likes: {this.props.post.likesCount}</h6>
-                <Like />
+                <Like post={this.props.post} />
                 <h5>Comments:</h5>
                 <Comment post={this.props.post} comments={this.props.comments}/>
                 <CommentForm currentUser={this.props.currentUser} postId={this.props.post.id} createComment={this.props.createComment}/>

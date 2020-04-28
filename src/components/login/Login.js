@@ -60,6 +60,7 @@ class Login extends Component{
                         createdAt: json.data.attributes.created_at,
                         updatedAt: json.data.attributes.updated_at
                     }
+                console.log(`This is Login userData: ${userData.username}`)
                 this.props.loginUser(userData)
                 this.props.history.push("/");
             }
