@@ -8,7 +8,8 @@ export default class UserPosts extends React.Component{
         return this.props.findPosts(this.props.currentUser.id).map((post, index) => {
             return (
                 <div key={index} id="UserPost">
-                    <h4>{post.title}</h4>
+                    <h4>Title: {post.title}</h4>
+                    <h4>Location: {post.location}</h4>
                     <p>{post.caption}</p>
                     <h4><Link key={index} to={`/posts/${post.id}/edit`}>Edit</Link></h4>
                     <span>Created at: {moment(post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span><br/>

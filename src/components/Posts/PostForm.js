@@ -33,6 +33,7 @@ export default class PostForm extends React.Component{
             if (json.message === "Unable to save."){
                 alert("Unable to save.")
             } else {
+                console.log(json.data)
                 const postData = {
                     id: json.data.id,
                     title: json.data.attributes.title, 

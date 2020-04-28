@@ -74,6 +74,24 @@ html{
     padding: 2%;
 }
 
+#signupSubmit{
+    border: solid 1px;
+    border-color: rgb(80, 80, 80);
+    border-radius: 5px;
+    margin: 2% 0 0 0%;
+    padding: 2%;
+    height: 40px;
+    width: 30%;
+    font-size: 13pt;
+    cursor: pointer;
+    outline: none;
+}
+
+#signupSubmit:hover{
+    background-color: rgb(161, 255, 255);
+    transition-duration: 1s;
+}
+
 /* This marks the end of the signup page */
 
 #NavBar{

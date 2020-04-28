@@ -8,7 +8,6 @@ export default class Posts extends React.Component{
 
     findUser = searchedUser => {
         const user = this.props.users.find(user => user.id == searchedUser)
-        console.log(user)
         if (user){
             return user.username
         } else {
