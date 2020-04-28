@@ -4,9 +4,19 @@ import { Link } from 'react-router-dom';
 
 export default class PostShow extends React.Component {
 
+    findPost = postId => {
+        const post = this.props.posts.find(post => post.id == postId)
+        const user = this.props.users.find(user => user.id == post.userId)
+          if (post || user){
+            return {post: post, user: user}
+          } else {
+            return {post: "none", user: "none"}
+        }
+      }
+
     render(){
         let edit;
-        if (this.props.findPost(this.props.match.params.id).user.id === parseInt(this.props.currentUser.id)){
+        if (this.findPost(this.props.match.params.id).user.id === parseInt(this.props.currentUser.id)){
             edit = (<Link to={"/posts/" + this.props.match.params.id + '/edit'}>Edit Post</Link>)
         }
         return (

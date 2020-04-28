@@ -17,15 +17,6 @@ import './css/App.css';
 
 class App extends React.Component{
 
-  findPost = postId => {
-    const post = this.props.posts.find(post => post.id == postId)
-    const user = this.props.users.find(user => user.id == post.userId)
-      if (post || user){
-        return {post: post, user: user}
-      } else {
-        return {post: "none", user: "none"}
-    }
-  }
 
   componentDidMount(){
     this.props.fetchPosts()
@@ -59,9 +50,7 @@ class App extends React.Component{
             <Route exact path="/posts/:id" render={routerProps => {
               return(
                 <PostShow {...routerProps} 
-                findPost={this.findPost} 
                 currentUser={this.props.currentUser} 
-
                 />
                 )
               }}
