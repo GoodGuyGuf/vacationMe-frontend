@@ -1,8 +1,9 @@
 import React from 'react';
 import NavBar from '../NavBar/NavBar';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export default class PostShow extends React.Component {
+class PostShow extends React.Component {
 
     findPost = postId => {
         const post = this.props.posts.find(post => post.id == postId)
@@ -22,13 +23,15 @@ export default class PostShow extends React.Component {
         return (
             <div>
             <NavBar/>
-                <h1>{this.props.findPost(this.props.match.params.id).post.title}</h1>
-                <h3>By: {this.props.findPost(this.props.match.params.id).user.username}</h3>
-                <h5>Location: {this.props.findPost(this.props.match.params.id).post.location}</h5>
-                <p>Caption: {this.props.findPost(this.props.match.params.id).post.caption}</p>
+                <h1>{this.findPost(this.props.match.params.id).post.title}</h1>
+                <h3>By: {this.findPost(this.props.match.params.id).user.username}</h3>
+                <h5>Location: {this.findPost(this.props.match.params.id).post.location}</h5>
+                <p>Caption: {this.findPost(this.props.match.params.id).post.caption}</p>
                 {edit}
             </div>
         )
     }
 
 }
+
+export default connect(state => ({posts: state.posts, users: state.users, currentUser: state.currentUser}), { })(PostShow)

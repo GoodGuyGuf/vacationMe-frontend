@@ -54,7 +54,6 @@ class App extends Component{ // We can also write this as class App extends Reac
               return(
                 <PostShow {...routerProps}  
               /* routerProps is used for the information in the URL, such as params. */
-                currentUser={this.props.currentUser} 
                 />
                 )
               }}
