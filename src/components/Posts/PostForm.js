@@ -44,7 +44,6 @@ class PostForm extends React.Component{
                     updatedAt: json.data.attributes.updated_at
                 }
                 this.props.createPost(postData)
-                this.props.history.push(`/posts/${postData.id}`)
             }
         })
     }
