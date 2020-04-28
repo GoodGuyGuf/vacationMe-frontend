@@ -11,7 +11,12 @@ to easily format the createdAt & updatedAt timestamps of a post instance. Then t
 the comments is the Commentform that allows any user to comment on the post.*/
 
 export default class Post extends Component {
+
     render(){
+        let edit;
+        if (this.props.post.id === this.props.currentUser.id){
+            edit = <h4><Link to={`/posts/${this.props.post.id}/edit`}>Edit Post</Link></h4>
+        }
         return (
             <>
                 <h2>@{this.props.user}</h2>
@@ -21,7 +26,7 @@ export default class Post extends Component {
                 <h4>{this.props.post.caption}</h4>
                 <span>Created at: {moment(this.props.post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span><br/>
                 <span>Updated at: {moment(this.props.post.updatedAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
-                
+                {edit}
                 <h6>Likes: {this.props.post.likesCount}</h6>
                 <Like />
                 <h5>Comments:</h5>

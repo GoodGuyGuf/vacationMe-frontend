@@ -16,7 +16,7 @@ export default class Posts extends React.Component{
       }
 
     render(){
-        const recentPosts = this.props.posts
+        const recentPosts = this.props.posts.slice(0)
         return (
         <div id="posts">
                 {recentPosts.reverse().map((post, index) => { 

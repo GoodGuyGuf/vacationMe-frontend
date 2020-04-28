@@ -17,8 +17,8 @@ class PostShow extends React.Component {
 
     render(){
         let edit;
-        if (this.findPost(this.props.match.params.id).user.id === parseInt(this.props.currentUser.id)){
-            edit = (<Link to={"/posts/" + this.props.match.params.id + '/edit'}>Edit Post</Link>)
+        if (this.findPost(this.props.match.params.id).user.id === this.props.currentUser.id){
+            edit = (<Link to={`/posts/${this.props.match.params.id}/edit`}>Edit Post</Link>)
         }
         return (
             <div>
@@ -34,4 +34,4 @@ class PostShow extends React.Component {
 
 }
 
-export default connect(state => ({posts: state.posts, users: state.users, currentUser: state.currentUser}), { })(PostShow)
+export default connect(state => ({posts: state.posts, users: state.users, currentUser: state.currentUser}))(PostShow)
