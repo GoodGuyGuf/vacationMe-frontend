@@ -1,6 +1,9 @@
 import React from 'react';
 import Post from './Post';
 
+/* PostsList acts as the holder of the logic for all of the posts. It connects posts to users with the findUser function.
+To reverse the posts without mutating state, I set a new variable containing the array of posts, reversed it, then mapped over
+it to return a new Post component where I pass down props. */
 export default class Posts extends React.Component{
 
     findUser = searchedUser => {

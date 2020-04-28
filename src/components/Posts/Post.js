@@ -5,6 +5,11 @@ import CommentForm from '../Comment/CommentForm';
 import Like from '../Like/LikeButton'
 import { Link } from 'react-router-dom';
 
+/* Post component is a presentational component. It only renders one post with the posts attributes. I used moment.js
+to easily format the createdAt & updatedAt timestamps of a post instance. Then the post houses all of the likes, the Like component
+(which is just a button creating new like instances for the rails API), a Comment Component which renders all of the comments and below
+the comments is the Commentform that allows any user to comment on the post.*/
+
 export default class Post extends Component {
     render(){
         return (
@@ -26,9 +31,3 @@ export default class Post extends Component {
         )
     }
 }
-
-// PostList -> Holds all posts in a div
-// Posts -> Holds a post, a comment and a commentForm all in one.
-// Post
-// Comment
-// CommentForm
