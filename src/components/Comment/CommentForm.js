@@ -9,10 +9,9 @@ export default class CommentForm extends Component{
     }
 
     handleOnChange = event => {
-        const currentUser = JSON.parse(localStorage.getItem("loggedIn")).userData
         this.setState({
             [event.target.name]: event.target.value,
-            user_id: currentUser.id,
+            user_id: this.props.currentUser.id,
             post_id: this.props.postId
         })
     }

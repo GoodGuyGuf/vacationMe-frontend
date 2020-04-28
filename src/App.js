@@ -7,6 +7,7 @@ import Home from './components/Home/Home.js';
 import Profile from './components/Profile/Profile.js';
 import PostShow from './components/Posts/PostShow';
 import PostEdit from './components/Posts/PostEdit';
+import DestinationContainer from './Containers/DestinationContainer'
 import { fetchPosts } from './actions/FetchPosts';
 import { fetchUsers } from './actions/FetchUsers';
 import { fetchLikes } from './actions/FetchLikes';
@@ -75,6 +76,8 @@ class App extends React.Component{
                 )
               }}
             />
+
+            <Route exact path="/destinations" component={DestinationContainer}/>
 
       </div>
     );
