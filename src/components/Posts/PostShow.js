@@ -21,14 +21,17 @@ class PostShow extends React.Component {
             edit = (<Link to={`/posts/${this.props.match.params.id}/edit`}>Edit Post</Link>)
         }
         return (
-            <div>
-            <NavBar/>
+            <>
+              <NavBar/>
+
+              <main>
                 <h1>{this.findPost(this.props.match.params.id).post.title}</h1>
                 <h3>By: {this.findPost(this.props.match.params.id).user.username}</h3>
                 <h5>Location: {this.findPost(this.props.match.params.id).post.location}</h5>
                 <p>Caption: {this.findPost(this.props.match.params.id).post.caption}</p>
                 {edit}
-            </div>
+              </main>
+            </>
         )
     }
 

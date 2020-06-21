@@ -19,7 +19,7 @@ class DestinationContainer extends Component{
                         currentUser={this.props.currentUser}
                         createComment={this.props.createComment}
                     />
-                 </main>
+                </main>
             </>
         )
     }
