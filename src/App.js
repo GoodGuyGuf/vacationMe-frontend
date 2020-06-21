@@ -27,15 +27,15 @@ class App extends Component{ // We can also write this as class App extends Reac
 
   render(){ // render is the only function that is required for a React Component to work properly. 
     return ( // In this Component we are defining our routes.
-      <div>
+      <>
       {/* immediately when you start the React Router with npm start, it will always load the default URL at localhost:3000/ */}
             <Route exact path="/login" render={() => {return( 
-              <div>
-                <div id="container">
+              <>
+                <header id="container">
                   <h1 id="pre-logo">vacationMe</h1>
-                </div>
+                </header>
                 <Login/>
-              </div>)
+              </>)
               }} 
             />
       {/* You have to set up a validator to run if there is no user logged in. Here we use the Redirect component if the validation */}
@@ -71,7 +71,7 @@ class App extends Component{ // We can also write this as class App extends Reac
 
             <Route exact path="/destinations" component={DestinationContainer}/>
 
-      </div>
+      </>
     );
   }
 }
