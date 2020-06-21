@@ -15,18 +15,20 @@ class Home extends React.Component{
             <>
                 <NavBar logoutUser={this.props.logoutUser}/>
 
-                <PostForm 
-                    createPost={this.props.createPost} 
-                    currentUser={this.props.currentUser}
-                />
+                <main>
+                    <PostForm 
+                        createPost={this.props.createPost} 
+                        currentUser={this.props.currentUser}
+                    />
                 
-                <PostsList
-                    posts={this.props.posts}
-                    users={this.props.users}
-                    currentUser={this.props.currentUser}
-                    comments={this.props.comments}
-                    createComment={this.props.createComment}
-                 />
+                    <PostsList
+                        posts={this.props.posts}
+                        users={this.props.users}
+                        currentUser={this.props.currentUser}
+                        comments={this.props.comments}
+                        createComment={this.props.createComment}
+                    />
+                 </main>
             </>
         )
     }

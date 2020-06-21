@@ -18,21 +18,21 @@ export default class Posts extends React.Component{
     render(){
         const recentPosts = this.props.posts.slice()
         return (
-        <div id="posts">
+            <section id="posts">
                 {recentPosts.reverse().map((post, index) => { 
                     return (
-                        <div key={index} id={'post_' + post.id}>
-                        <Post 
-                        currentUser={this.props.currentUser}
-                        user={this.findUser(post.userId)} 
-                        post={post} 
-                        index={index} 
-                        comments={this.props.comments}
-                        createComment={this.props.createComment}
-                        />
-                    </div>) 
+                        <article key={index} id={'post_' + post.id}>
+                            <Post 
+                                currentUser={this.props.currentUser}
+                                user={this.findUser(post.userId)} 
+                                post={post} 
+                                index={index} 
+                                comments={this.props.comments}
+                                createComment={this.props.createComment}
+                            />
+                    </article>) 
                 })}
-        </div>
+            </section>
         )
     }
 }

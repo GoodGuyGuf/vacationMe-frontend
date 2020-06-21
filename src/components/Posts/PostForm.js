@@ -51,15 +51,15 @@ export default class PostForm extends React.Component{
 
     render(){
         return (
-            <div id="PostForm">
+            <section id="PostForm">
                 <form onSubmit={this.handleOnSubmit}>
-                <h3>Write a new post: </h3>
+                    <h3>Write a new post: </h3>
                     <input onChange={this.handleOnChange} type="text" name="title" value={this.state.title} placeholder="Title" /><br/>
                     <input onChange={this.handleOnChange} type="text" name="location" value={this.state.location} placeholder="Location"/><br/>
                     <textarea onChange={this.handleOnChange} type="text" name="caption" value={this.state.caption} placeholder="Caption"/><br/>
                     <input type="submit" value="Post"/>
                 </form>
-            </div>
+            </section>
         )
     }
 }
