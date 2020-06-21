@@ -40,13 +40,13 @@ export default class CommentForm extends Component{
 
     render(){
         return (
-            <div id="CommentForm">
+            <section id="CommentForm">
                 <form onSubmit={this.handleOnSubmit}>
-                <p>Comment: </p>
+                    <p>Comment: </p>
                     <textarea onChange={this.handleOnChange} id="commentform" type="text" name="description" value={this.state.description} /><br/>
                     <input id="commentsubmit" type="submit" value="Submit"/>
                 </form>
-            </div>
+            </section>
         )
     }
 }
