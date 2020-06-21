@@ -156,7 +156,7 @@ article[id^="post_"]{
     font-weight: bold;
 }
 
-div[id^="comment_"]{
+article[id^="comment_"]{
     box-sizing: content-box;
     width: 94%;
     margin-top: 1%;

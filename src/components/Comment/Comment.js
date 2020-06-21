@@ -7,10 +7,10 @@ export default class Comment extends Component {
         if (comments){
             return comments.map((comment, index) => {
                 return (
-                    <div key={index} id={"comment_" + comment.user_id}>
-                        <h4>@{comment.display_user}</h4>
+                    <article key={index} id={"comment_" + comment.user_id}>
+                        <p><em>@{comment.display_user}</em></p>
                         <p>{comment.description}</p>
-                    </div>
+                    </article>
                 )
             })
         }

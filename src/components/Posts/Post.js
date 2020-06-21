@@ -19,19 +19,27 @@ export default class Post extends Component {
         }
         return (
             <>
-                <h2>@{this.props.user}</h2>
-                <h3>Location: {this.props.post.location}</h3>
-                <h4>Title: <Link key={this.props.index} to={`/posts/${this.props.post.id}`}>{this.props.post.title}</Link></h4>
-                <h3>Description: </h3>
-                <h4>{this.props.post.caption}</h4>
-                <span>Created at: {moment(this.props.post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</span><br/>
-                <span>Updated at: {moment(this.props.post.updatedAt).format('MMMM Do YYYY, h:mm:ss a')}</span>
-                {edit}
-                <h6>Likes: {this.props.post.likesCount}</h6>
-                <Like post={this.props.post} />
-                <h5>Comments:</h5>
-                <Comment post={this.props.post} comments={this.props.comments}/>
-                <CommentForm currentUser={this.props.currentUser} postId={this.props.post.id} createComment={this.props.createComment}/>
+                <section id='postData'>
+                    <Link key={this.props.index} to={`/posts/${this.props.post.id}`}>{this.props.post.title}</Link>
+                    <p><em>@{this.props.user}</em></p>
+                    <p>Location: {this.props.post.location}</p>
+                    <p>Description: </p>
+                    <p>{this.props.post.caption}</p>
+                    <p>Created at: {moment(this.props.post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</p>
+                    <p>Updated at: {moment(this.props.post.updatedAt).format('MMMM Do YYYY, h:mm:ss a')}</p>
+                    {edit}
+                </section>
+
+                <section id='likes'>
+                    <p>Likes: {this.props.post.likesCount}</p>
+                    <Like post={this.props.post} />
+                </section>
+
+                <section id='comments'>
+                    <p>Comments:</p>
+                    <Comment post={this.props.post} comments={this.props.comments}/>
+                    <CommentForm currentUser={this.props.currentUser} postId={this.props.post.id} createComment={this.props.createComment}/>
+                </section>
             </>
         )
     }
