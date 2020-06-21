@@ -34,13 +34,13 @@ export default class DestinationForm extends Component {
     render(){
         return(
             <>
-            <section>
-                <form id="destinationFilterForm" onSubmit={this.handleOnSubmit}>
-                    <h3>Search For Destinations:</h3>
-                    <input type="text" name="search" placeholder="Search" onChange={this.handleOnChange} value={this.state.search}/>
-                    <input type="submit" value="Submit"/>
-                </form>
-            </section>
+                <section>
+                    <form id="destinationFilterForm" onSubmit={this.handleOnSubmit}>
+                        <h3>Search For Destinations:</h3>
+                        <input type="text" name="search" placeholder="Search" onChange={this.handleOnChange} value={this.state.search}/>
+                        <input type="submit" value="Submit"/>
+                    </form>
+                </section>
                 
                 {this.state.isSubmitted && this.filterPosts()}
             </>
