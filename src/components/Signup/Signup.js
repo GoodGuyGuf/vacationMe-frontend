@@ -53,21 +53,26 @@ class Signup extends React.Component{
 
     render(){
         return (
-        <div>
-        <h1 id="pre-logo">vacationMe</h1>
-            <form id="signup" onSubmit={this.handleOnSubmit}>
-                <input id="loginInput" onChange={this.handleOnChange} type="text" name="name" value={this.state.name} placeholder="Name"/>
-                <br />
-                <input id="loginInput" onChange={this.handleOnChange} type="text" name="username" value={this.state.username} placeholder="Username"/>
-                <br />
-                <input id="loginInput" onChange={this.handleOnChange} type="email" name="email" value={this.state.email} placeholder="Email"/>
-                <br />
-                <input id="loginInput" onChange={this.handleOnChange} type="password" name="password" value={this.state.password} placeholder="Password"/>
-                <br />
-                <input id="signupSubmit" type="submit" value="Sign Up"/>
-                <h1>Already have an account? <Link to="/login">Log In</Link></h1>
-            </form>
-        </div>
+            <main>
+                <header id="container">
+                    <h1 id="pre-logo">vacationMe</h1>
+                </header>
+            
+                <section>
+                    <form id="signup" onSubmit={this.handleOnSubmit}>
+                        <input id="loginInput" onChange={this.handleOnChange} type="text" name="name" value={this.state.name} placeholder="Name"/>
+                        <br />
+                        <input id="loginInput" onChange={this.handleOnChange} type="text" name="username" value={this.state.username} placeholder="Username"/>
+                        <br />
+                        <input id="loginInput" onChange={this.handleOnChange} type="email" name="email" value={this.state.email} placeholder="Email"/>
+                        <br />
+                        <input id="loginInput" onChange={this.handleOnChange} type="password" name="password" value={this.state.password} placeholder="Password"/>
+                        <br />
+                        <input id="signupSubmit" type="submit" value="Sign Up"/>
+                        <h1>Already have an account? <Link to="/login">Log In</Link></h1>
+                    </form>
+                </section>
+            </main>
         )
     }
 
