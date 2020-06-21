@@ -42,19 +42,25 @@ class Profile extends React.Component{
 
     render(){
         return(
-            <div>
+            <>
                 <NavBar />
-                <h1 id="userInfo">{this.props.currentUser.username}</h1>
-                <p id="userInfo">{this.props.currentUser.name}</p>
-                <p id="userInfo">{this.props.currentUser.email}</p>
-                <h5 id="userposts">Posts:</h5>
-                <UserPosts 
-                    currentUser={this.props.currentUser}
-                    deletePost={this.props.deletePost} 
-                    deleter={this.deleter}
-                    findPosts={this.findPosts}
-                 />
-            </div>
+
+                <main>
+                    <section>
+                        <h1 id="userInfo">{this.props.currentUser.username}</h1>
+                        <p id="userInfo">{this.props.currentUser.name}</p>
+                        <p id="userInfo">{this.props.currentUser.email}</p>
+                        <h5 id="userposts">Posts:</h5>
+                    </section>
+                    
+                    <UserPosts 
+                        currentUser={this.props.currentUser}
+                        deletePost={this.props.deletePost} 
+                        deleter={this.deleter}
+                        findPosts={this.findPosts}
+                    />
+                 </main>
+            </>
         )
     }
 }
