@@ -8,16 +8,19 @@ class DestinationContainer extends Component{
     
     render(){
         return(
-            <div>
+            <>
                 <NavBar/>
-                <DestinationForm 
-                posts={this.props.posts}
-                users={this.props.users}
-                comments={this.props.comments}
-                currentUser={this.props.currentUser}
-                createComment={this.props.createComment}
-                 />
-            </div>
+
+                <main>
+                    <DestinationForm 
+                        posts={this.props.posts}
+                        users={this.props.users}
+                        comments={this.props.comments}
+                        currentUser={this.props.currentUser}
+                        createComment={this.props.createComment}
+                    />
+                 </main>
+            </>
         )
     }
 }
