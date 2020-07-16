@@ -33,7 +33,8 @@ export default class CommentForm extends Component{
             if (json.message === "Unable to save."){
                 alert("Unable to save.")
             } else {
-                this.props.createComment(json.data)
+                console.log(json.data)
+                this.props.createComment({id: json.data.id, type: json.data.type, ...json.data.attributes})
             }
         })
     }
