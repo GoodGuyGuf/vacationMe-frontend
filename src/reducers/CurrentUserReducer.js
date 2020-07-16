@@ -4,6 +4,8 @@ export default function currentUserReducer(state = {}, action){
             return state  
         case "LOGIN_USER":
             return {...action.user}
+        case "SIGNUP_USER":
+            return {...action.user}
         case 'LOGOUT_USER':
             return {}   
         default:

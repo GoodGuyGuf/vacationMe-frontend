@@ -1,7 +1,7 @@
 import React from 'react';
 import { compose } from 'redux';
 import { withRouter, Link } from 'react-router-dom';
-import { loginUser } from '../../actions/Actions';
+import { signupUser } from '../../actions/Actions';
 import { connect } from 'react-redux';
 
 class Signup extends React.Component{
@@ -45,7 +45,7 @@ class Signup extends React.Component{
                     updatedAt: json.data.attributes.updated_at
                 }
                 console.log(`This is Signup userData.username: ${userData.username}, user.id: ${userData.id}`)
-                this.props.loginUser(userData)
+                this.props.signupUser(userData)
                 this.props.history.push("/");
             }
         })
@@ -78,4 +78,4 @@ class Signup extends React.Component{
 
 }
 
-export default compose(withRouter, connect(null, { loginUser }))(Signup)
+export default compose(withRouter, connect(null, { signupUser }))(Signup)

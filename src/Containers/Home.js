@@ -11,6 +11,7 @@ class Home extends React.Component{
     component. The child components could have connected to redux, but each one also renders within one another. Currently since this
     is the container or parent component, it feels better to pass down props from here. */
     render(){
+        console.log(this.props.users)
         return(
             <>
                 <NavBar logoutUser={this.props.logoutUser}/>
