@@ -2,7 +2,7 @@ import React from 'react';
 import NavBar from '../components/NavBar/NavBar';
 import PostForm from '../components/Posts/PostForm';
 import PostsList from '../components/Posts/PostsList';
-import { createPost, updatePost, createComment, logoutUser } from '../actions/Actions';
+import { createPost, updatePost, createComment, deleteComment, logoutUser } from '../actions/Actions';
 import { connect } from 'react-redux';
 
 class Home extends React.Component{
@@ -27,6 +27,7 @@ class Home extends React.Component{
                         currentUser={this.props.currentUser}
                         comments={this.props.comments}
                         createComment={this.props.createComment}
+                        deleteComment={this.props.deleteComment}
                     />
                  </main>
             </>
@@ -39,4 +40,4 @@ export default connect(state => ({
     users: state.users, 
     comments: state.comments, 
     currentUser: state.currentUser
-}), {createPost, updatePost, createComment, logoutUser})(Home)
+}), {createPost, updatePost, createComment, deleteComment, logoutUser})(Home)

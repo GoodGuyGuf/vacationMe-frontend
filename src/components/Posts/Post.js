@@ -37,7 +37,7 @@ export default class Post extends Component {
 
                 <section id='comments'>
                     <p>Comments:</p>
-                    <Comment post={this.props.post} comments={this.props.comments}/>
+                    <Comment post={this.props.post} comments={this.props.comments} currentUser={this.props.currentUser} deleteComment={this.props.deleteComment}/>
                 </section>
                 
                 <CommentForm currentUser={this.props.currentUser} postId={this.props.post.id} createComment={this.props.createComment}/>

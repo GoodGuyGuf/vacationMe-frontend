@@ -2,6 +2,10 @@ export function createComment(comment){
     return {type: "ADD_COMMENT", comment}
 }
 
+export function deleteComment(comment){
+    return {type: "REMOVE_COMMENT", comment}
+}
+
 export function createPost(post){
     return {type: "ADD_POST", post}
 }

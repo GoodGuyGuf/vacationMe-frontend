@@ -29,6 +29,7 @@ export default class Posts extends React.Component{
                                 index={index} 
                                 comments={this.props.comments}
                                 createComment={this.props.createComment}
+                                deleteComment={this.props.deleteComment}
                             />
                     </article>) 
                 })}
