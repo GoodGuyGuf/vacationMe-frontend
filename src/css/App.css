@@ -228,6 +228,16 @@ article[id^="comment_"]{
     border-radius: 5px;
 }
 
+#deleteComment{
+    border: solid 1px;
+    border-color: rgb(80, 80, 80);
+    border-radius: 5px;
+    margin: 1% 40%;
+    padding: 1%;
+    width: 20%;
+    font-size: 13pt;
+}
+
 /* This is the end of the home page */
 
 #userInfo{

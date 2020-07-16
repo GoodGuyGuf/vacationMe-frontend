@@ -32,7 +32,7 @@ export default class Comment extends Component {
                     <article key={index} id={"comment_" + comment.user_id}>
                         <p><em>@{comment.display_user}</em></p>
                         <p>{comment.description}</p>
-                        {this.props.currentUser.id == comment.user_id ? <button onClick={() => {this.delete(comment)}}>Delete</button> : null}
+                        {this.props.currentUser.id == comment.user_id ? <button id="deleteComment" onClick={() => {this.delete(comment)}}>Delete</button> : null}
                     </article>
                 )
             })
