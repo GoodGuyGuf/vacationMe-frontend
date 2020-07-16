@@ -5,9 +5,9 @@ export default function commentReducer(state = [], action){
         // case "UPDATE_LIKE":
         //     const array = state.filter(object => object.id != action.post.id)
         //     return [...array, action.post]
-        // case "DELETE_POST":
-        //     let idx = state.findIndex(object => object.id === action.post.id);
-        //     return [...state.slice(0, idx), ...state.slice(idx + 1)];
+        case "REMOVE_COMMENT":
+            let idx = state.findIndex(object => object.id === action.comment.id);
+            return [...state.slice(0, idx), ...state.slice(idx + 1)];
         case 'START_LOADING_COMMENTS':
             return [...state];
         default:
