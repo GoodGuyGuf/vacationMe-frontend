@@ -1,4 +1,4 @@
-html{
+/* html{
     background-color: rgb(236, 236, 236);
 }
 
@@ -62,7 +62,7 @@ html{
     background-color: rgb(0, 53, 53);
 }
 
-/* This marks the end of the login page */
+// This marks the end of the login page 
 
 #signup{
     text-align: center;
@@ -92,7 +92,7 @@ html{
     transition-duration: 1s;
 }
 
-/* This marks the end of the signup page */
+// This marks the end of the signup page 
 
 #NavBar{
     background-color: rgb(161, 255, 255);
@@ -236,11 +236,11 @@ article[id^="comment_"]{
     padding: 1%;
     width: 20%;
     font-size: 13pt;
-}
+} */
 
 /* This is the end of the home page */
 
-#userInfo{
+/* #userInfo{
     text-align: center;
 }
 
@@ -300,6 +300,6 @@ h5#userposts{
     height: 50px;
     width: 100px;
     font-size: 13pt;
-}
+} */
 
 /* This is the end of the Profile page */
