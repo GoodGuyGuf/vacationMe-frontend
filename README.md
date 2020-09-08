@@ -23,7 +23,7 @@ If you would like to run this application, you will have to:
 This React App was developed in May 2020.
 
 # Contributing
-Bug reports and pull requests are welcome on GitHub at https://github.com/GoodGuyGuf/vacationMe-backend This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/GoodGuyGuf/vacationMe-frontend This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
 # Code of Conduct
-Everyone interacting in the vacationMe-backend project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
+Everyone interacting in the vacationMe-frontend project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
