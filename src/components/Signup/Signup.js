@@ -61,15 +61,11 @@ class Signup extends React.Component{
                 <section>
                     <form id="signup" onSubmit={this.handleOnSubmit}>
                         <input id="loginInput" onChange={this.handleOnChange} type="text" name="name" value={this.state.name} placeholder="Name"/>
-                        <br />
                         <input id="loginInput" onChange={this.handleOnChange} type="text" name="username" value={this.state.username} placeholder="Username"/>
-                        <br />
                         <input id="loginInput" onChange={this.handleOnChange} type="email" name="email" value={this.state.email} placeholder="Email"/>
-                        <br />
                         <input id="loginInput" onChange={this.handleOnChange} type="password" name="password" value={this.state.password} placeholder="Password"/>
-                        <br />
                         <input id="signupSubmit" type="submit" value="Sign Up"/>
-                        <h1>Already have an account? <Link to="/login">Log In</Link></h1>
+                        <h2>Already have an account? <Link to="/login">Log In</Link></h2>
                     </form>
                 </section>
             </main>

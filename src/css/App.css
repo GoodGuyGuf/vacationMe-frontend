@@ -1,4 +1,4 @@
-/* html{
+html{
     background-color: rgb(236, 236, 236);
 }
 
@@ -13,17 +13,15 @@
     margin-bottom: 1%;
     width: 85%;
     padding: 2% 8% 2% 8%;
-    border: solid 2px;
-    border-color: black;
-    background-color: rgb(245, 245, 245);
-    border-radius: 5px;
+    border-radius: 2px;
+    border: solid lightgrey 1px;
+    background-color: white;
+    box-shadow: 0 1px 3px lightgrey;
 }
 
-#loginInput{
-    border: solid 1px;
-    border-color: rgb(80, 80, 80);
-    border-radius: 3px;
-    background-color: white;
+.loginInput{
+    border: solid lightgrey 1px;
+    border-radius: 4px;
     margin-top: 3%;
     padding: 2%;
     height: 30px;
@@ -31,19 +29,20 @@
     font-size: 20pt;
 }
 
-#loginInput:focus{
+.loginInput:focus{
     outline: none;
 }
 
-#loginInput:hover{
+.loginInput:hover{
     background-color: rgb(220, 253, 255);
     transition-duration: 0.5s;
 }
 
+.loginInput:-webkit-autofill::first-line {font-size: 24px}
+
 #loginSubmit{
-    border: solid 1px;
-    border-color: rgb(80, 80, 80);
-    border-radius: 5px;
+    border: solid lightgrey 1px;
+    border-radius: 4px;
     margin: 2% 0 0 32%;
     padding: 2%;
     height: 40px;
@@ -62,7 +61,7 @@
     background-color: rgb(0, 53, 53);
 }
 
-// This marks the end of the login page 
+/* This marks the end of the login page */
 
 #signup{
     text-align: center;
@@ -92,7 +91,7 @@
     transition-duration: 1s;
 }
 
-// This marks the end of the signup page 
+/* This marks the end of the signup page */
 
 #NavBar{
     background-color: rgb(161, 255, 255);
@@ -236,11 +235,11 @@ article[id^="comment_"]{
     padding: 1%;
     width: 20%;
     font-size: 13pt;
-} */
+} 
 
 /* This is the end of the home page */
 
-/* #userInfo{
+#userInfo{
     text-align: center;
 }
 
@@ -300,6 +299,6 @@ h5#userposts{
     height: 50px;
     width: 100px;
     font-size: 13pt;
-} */
+}
 
 /* This is the end of the Profile page */

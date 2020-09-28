@@ -76,27 +76,35 @@ class Login extends Component{
         return(
             <main id="loginform">
                 <form onSubmit={this.handleOnSubmit}>
-                    <input id="loginInput" onChange={this.handleOnChange}
-                     type="email" 
-                     name="email" 
-                     value={this.state.email} 
-                     placeholder="Email"
-                     />
+                    <div>
+                        <label for="loginInput">Email:</label>
+                        <input 
+                            class="loginInput" 
+                            onChange={this.handleOnChange}
+                            type="email" 
+                            name="email" 
+                            value={this.state.email} 
+                            placeholder="Email"
+                        />
+                    </div>
 
-                     <br/>
+                    <div>
+                        <label for="loginInput">Password:</label>
+                        <input 
+                            class="loginInput" 
+                            onChange={this.handleOnChange}
+                            type="password" 
+                            name="password" 
+                            value={this.state.password}
+                            placeholder="Password"
+                        />
+                     </div>
 
-                    <input id="loginInput" onChange={this.handleOnChange}
-                     type="password" 
-                     name="password" 
-                     value={this.state.password}
-                     placeholder="Password"
-                     />
-
-                     <br/>
-                     
-                    <input id="loginSubmit" type="submit" value="Log In"/>
+                     <div>
+                        <input id="loginSubmit" type="submit" value="Log In"/>
+                    </div>
                     
-                    <h1>Don't have an account? <Link to="/signup">Signup</Link></h1>
+                    <h2>Don't have an account? <Link to="/signup">Signup</Link></h2>
                 </form>
             </main>
         )
