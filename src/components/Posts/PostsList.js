@@ -30,6 +30,7 @@ export default class Posts extends React.Component{
                                 comments={this.props.comments}
                                 createComment={this.props.createComment}
                                 deleteComment={this.props.deleteComment}
+                                images={this.props.images}
                             />
                     </article>) 
                 })}

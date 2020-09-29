@@ -15,7 +15,8 @@ export function fetchPosts(){
                             userId: element.attributes.user_id,
                             createdAt: element.attributes.created_at,
                             updatedAt: element.attributes.updated_at,
-                            likesCount: element.attributes.likes_count
+                            likesCount: element.attributes.likes_count,
+                            images: element.attributes.images
                         }
                     })
                 })

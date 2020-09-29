@@ -6,7 +6,8 @@ export default class PostForm extends React.Component{
         title: "",
         location: "",
         caption: "",
-        user_id: ""
+        user_id: "",
+        images: []
     }
 
     handleOnChange = event => {
@@ -16,15 +17,31 @@ export default class PostForm extends React.Component{
         })
     }
 
+    handleImageChange = event => {
+        var images = [...this.state.images];
+        images.push(...event.target.files);
+        this.setState({
+            ...this.state,
+            images: images
+        })
+    }
+
     handleOnSubmit = event => {
         event.preventDefault();
+        var formData = new FormData();
+        var stateKeys = Object.keys(this.state);
+        stateKeys.pop();
+
+        for (let i = 0; i < stateKeys.length; i++){
+            formData.append(stateKeys[i], this.state[`${stateKeys[i]}`])
+        }
+
+        for (let i = 0; i < this.state.images.length; i++){
+            formData.append("images[]", this.state.images[i])
+        }
         const post = {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body: JSON.stringify(this.state)
+            body: formData
         }
 
         fetch("http://localhost:3000/posts", post)
@@ -52,29 +69,35 @@ export default class PostForm extends React.Component{
     render(){
         return (
             <section id="PostForm">
-                <div id="imageUploadContainer">
-
-                    <div id="imagesContainer">
-                        <p>Images go here</p>
-                    </div>
-
-                    <div id="uploadformContainer">
-                        <form id="uploadForm">
-                            <label htmlFor="images">Select Images</label>
-                            <input id="images" type="file" name="post[images]" accept="image/*"/>
-                            <input type="submit" value="Upload"/>
-                        </form>
-                    </div>
-                    
-                </div>
-
+                <h3>Write a new post: </h3>
+                <div id="imagesContainer"></div>
                 <div id="postContainer">
                     <form onSubmit={this.handleOnSubmit}>
-                        <h3>Write a new post: </h3>
-                        <input onChange={this.handleOnChange} type="text" name="title" value={this.state.title} placeholder="Title" /><br/>
-                        <input onChange={this.handleOnChange} type="text" name="location" value={this.state.location} placeholder="Location"/><br/>
-                        <textarea onChange={this.handleOnChange} type="text" name="caption" value={this.state.caption} placeholder="Caption"/><br/>
-                        <input type="submit" value="Post"/>
+
+                        <div id="uploadformContainer">
+                            <label htmlFor="images">Select Images</label>
+                            <input id="images" onChange={this.handleImageChange} type="file" name="images" accept="image/png, image/jpeg" multiple/>
+                        </div>
+
+                        <div>
+                            <label htmlFor="title">Title:</label>
+                            <input id="title" onChange={this.handleOnChange} type="text" name="title" value={this.state.title} placeholder="Title" />
+                        </div>
+
+                        <div>
+                            <label htmlFor="title">Location:</label>
+                            <input id="title" onChange={this.handleOnChange} type="text" name="location" value={this.state.location} placeholder="Location"/>
+                        </div>
+
+                        <div>
+                            <label htmlFor="caption">Caption:</label>
+                            <textarea onChange={this.handleOnChange} type="text" name="caption" value={this.state.caption} placeholder="Caption"/>
+                        </div>
+
+                        <div>
+                            <input type="submit" value="Post"/>
+                        </div>
+
                     </form>
                 </div>
             </section>

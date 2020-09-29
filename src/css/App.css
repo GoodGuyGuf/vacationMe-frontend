@@ -158,6 +158,7 @@ label{
     width: 40%;
     height: 550px;
     padding: 1% 3%;
+    text-align: center;
 
     border: solid lightgray 1px;
     border-radius: 2px;
@@ -168,19 +169,9 @@ label{
     flex-direction: column;
 }
 
-#imageUploadContainer, #postContainer{
+#postContainer{
     width: 100%;
     flex: 1 1 50%;
-}
-
-#imageUploadContainer{
-    display: flex;
-    flex-direction: column;
-}
-
-#uploadForm{
-    display: flex;
-    flex-direction: column;
 }
 
 #imagesContainer{
@@ -189,6 +180,47 @@ label{
 
 #imagesContainer, #uploadformContainer{
     flex: 1 1 50%;
+}
+
+.images{
+    margin: 0 auto;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    overflow: auto;
+    border: solid lightgrey 1px;
+    border-radius: 4px;
+    box-shadow: 0 0 3px lightgrey;
+}
+
+.imgFlex{
+    flex: 1 0 30%;
+    margin: 1%;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+}
+
+.postTitle{
+    text-align: center;
+}
+
+.authorLocation, .createdUpdated{
+    display: inline-block;
+}
+
+.postCaption{
+    border: solid lightgrey 1px;
+    border-radius: 4px;
+    box-shadow: 0 0 3px lightgrey;
+    padding: 10px;
+}
+
+.createdUpdated{
+    font-size: 12px;
+    font-weight: bold;
 }
 
 #PostForm input[type="text"]{

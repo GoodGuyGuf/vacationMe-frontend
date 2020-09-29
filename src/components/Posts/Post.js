@@ -15,27 +15,47 @@ export default class Post extends Component {
     render(){
         let edit;
         if (this.props.post.userId == this.props.currentUser.id){
-            edit = <h4><Link to={`/posts/${this.props.post.id}/edit`}>Edit Post</Link></h4>
+            edit = <h3><Link to={`/posts/${this.props.post.id}/edit`}>Edit Post</Link></h3>
         }
         return (
             <>
-                <section id='postData'>
-                    <Link key={this.props.index} to={`/posts/${this.props.post.id}`}>{this.props.post.title}</Link>
-                    <p><em>@{this.props.user}</em></p>
-                    <p>Location: {this.props.post.location}</p>
-                    <p>Description: </p>
-                    <p>{this.props.post.caption}</p>
-                    <p>Created at: {moment(this.props.post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</p>
-                    <p>Updated at: {moment(this.props.post.updatedAt).format('MMMM Do YYYY, h:mm:ss a')}</p>
+                <section className='postData'>
+                    <h2 className="postTitle">{this.props.user}: <Link key={this.props.index} to={`/posts/${this.props.post.id}`}>{this.props.post.title}</Link></h2>
+
+                    <div className="images">
+                        {this.props.post.images.map((image, index) => {
+                            return (
+                                <div className="imgFlex" key={index}>
+                                    <img className="img" src={`http://localhost:3000/` + image} alt="user image" />
+                                </div>
+                            )
+                        })}
+                    </div>
+
+                    <div className="postInfo">
+                        <div className="authorLocation">
+                            <p>Location: {this.props.post.location}</p>
+                        </div>
+
+                        <div className="postCaption">
+                            <p>{this.props.post.caption}</p>
+                        </div>
+
+                        <div className="createdUpdated">
+                            <p>Created at: {moment(this.props.post.createdAt).format('MMMM Do YYYY, h:mm:ss a')}</p>
+                            <p>Updated at: {moment(this.props.post.updatedAt).format('MMMM Do YYYY, h:mm:ss a')}</p>
+                        </div>
+                    </div>
+
                     {edit}
                 </section>
 
-                <section id='likes'>
+                <section className='likes'>
                     <p>Likes: {this.props.post.likesCount}</p>
                     <Like post={this.props.post} />
                 </section>
 
-                <section id='comments'>
+                <section className='comments'>
                     <p>Comments:</p>
                     <Comment post={this.props.post} comments={this.props.comments} currentUser={this.props.currentUser} deleteComment={this.props.deleteComment}/>
                 </section>
