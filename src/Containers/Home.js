@@ -16,7 +16,7 @@ class Home extends React.Component{
             <>
                 <NavBar logoutUser={this.props.logoutUser}/>
 
-                <main>
+                <main id="home">
                     <PostForm 
                         createPost={this.props.createPost} 
                         currentUser={this.props.currentUser}

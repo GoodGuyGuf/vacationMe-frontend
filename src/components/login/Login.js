@@ -74,9 +74,9 @@ class Login extends Component{
 
     render(){
         return(
-            <main id="loginform">
-                <form onSubmit={this.handleOnSubmit}>
-                    <div>
+            <main id="loginformContainer">
+                <form id="loginForm" onSubmit={this.handleOnSubmit}>
+                    <div class="login">
                         <label for="loginInput">Email:</label>
                         <input 
                             class="loginInput" 
@@ -88,7 +88,7 @@ class Login extends Component{
                         />
                     </div>
 
-                    <div>
+                    <div class="login">
                         <label for="loginInput">Password:</label>
                         <input 
                             class="loginInput" 
@@ -100,11 +100,13 @@ class Login extends Component{
                         />
                      </div>
 
-                     <div>
+                     <div class="login">
                         <input id="loginSubmit" type="submit" value="Log In"/>
                     </div>
                     
-                    <h2>Don't have an account? <Link to="/signup">Signup</Link></h2>
+                    <div class="login">
+                        <h2>Don't have an account? <Link to="/signup">Signup</Link></h2>
+                    </div>
                 </form>
             </main>
         )
