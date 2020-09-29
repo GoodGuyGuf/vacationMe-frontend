@@ -76,10 +76,10 @@ class Login extends Component{
         return(
             <main id="loginformContainer">
                 <form id="loginForm" onSubmit={this.handleOnSubmit}>
-                    <div class="login">
-                        <label for="loginInput">Email:</label>
+                    <div className="login">
+                        <label htmlFor="loginInput">Email:</label>
                         <input 
-                            class="loginInput" 
+                            className="loginInput" 
                             onChange={this.handleOnChange}
                             type="email" 
                             name="email" 
@@ -88,10 +88,10 @@ class Login extends Component{
                         />
                     </div>
 
-                    <div class="login">
-                        <label for="loginInput">Password:</label>
+                    <div className="login">
+                        <label htmlFor="loginInput">Password:</label>
                         <input 
-                            class="loginInput" 
+                            className="loginInput" 
                             onChange={this.handleOnChange}
                             type="password" 
                             name="password" 
@@ -100,11 +100,11 @@ class Login extends Component{
                         />
                      </div>
 
-                     <div class="login">
+                     <div className="login">
                         <input id="loginSubmit" type="submit" value="Log In"/>
                     </div>
                     
-                    <div class="login">
+                    <div className="login">
                         <h2>Don't have an account? <Link to="/signup">Signup</Link></h2>
                     </div>
                 </form>

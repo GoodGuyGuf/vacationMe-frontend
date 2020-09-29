@@ -239,7 +239,7 @@ article[id^="post_"]{
     margin-bottom: 1%;
     
     border: solid lightgrey 1px;
-    background-color: rgb(245, 245, 245);
+    background-color: white;
     border-radius: 2px;
 }
 

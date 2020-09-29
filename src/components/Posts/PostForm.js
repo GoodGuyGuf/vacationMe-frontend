@@ -60,8 +60,8 @@ export default class PostForm extends React.Component{
 
                     <div id="uploadformContainer">
                         <form id="uploadForm">
-                            <label for="images">Select Images</label>
-                            <input id="images" type="file" name="user[images]" accept="image/*"/>
+                            <label htmlFor="images">Select Images</label>
+                            <input id="images" type="file" name="post[images]" accept="image/*"/>
                             <input type="submit" value="Upload"/>
                         </form>
                     </div>
