@@ -75,7 +75,7 @@ export default class PostForm extends React.Component{
                     <form onSubmit={this.handleOnSubmit}>
 
                         <div id="uploadformContainer">
-                            <label htmlFor="images">Select Images</label>
+                            <label htmlFor="images"><u>Select Images</u></label>
                             <input id="images" onChange={this.handleImageChange} type="file" name="images" accept="image/png, image/jpeg" multiple/>
                         </div>
 
